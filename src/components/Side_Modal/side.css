@@ -1,0 +1,157 @@
+.window_cart {
+    position: fixed;
+    transition: transform 500ms;
+    z-index: 20;
+    top: 0;
+    width: 440px;
+    height: 100%;
+    right: 0;
+    background-color: rgb(230, 208, 208);
+
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.window_cart.active {
+    animation: modal_win 0.3s ease-in-out;
+}
+
+@keyframes modal_win {
+    0% {
+        transform: translateX(440px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.p_delete {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.scroll_box {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+/* //Ucim dizaynovat scroll */
+
+.scroll_box::-webkit-scrollbar{
+    width: 10px;
+}
+
+.scroll_box::-webkit-scrollbar-thumb{
+    background: #CD3333;
+    border-radius: 10px;
+    /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+}
+
+
+.topBox {
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid #000000; */
+    border-radius: 10px;
+    max-height: 200px;
+    width: 400px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+
+    animation: boomTop 0.4s ease-in-out;
+
+    box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22),
+        0 5px 14px 0 rgba(0, 0, 0, .18);
+}
+
+@keyframes boomTop {
+    0%{
+        transform: scale(0.5)
+    }    
+    100%{
+        transform: scale(1)
+    }
+}
+
+.topBox_right {
+    width: 250px;
+    max-height: 20px;
+    padding: 3px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.topBox_left {
+    width: 150px;
+    height: 150px;
+}
+
+.cartImg {
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottomBox {
+    height: 160px;
+    background-color: #CD3333;
+    color: aliceblue;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+
+    animation:boomBottom 0.4s ease-in;
+}
+
+@keyframes boomBottom {
+    100% {
+        transform: translateY(0)
+    }
+
+    0% {
+        transform: translateY(100%)
+    }
+}
+
+.amount_box {
+    margin-bottom: 10px;
+    padding: 2px 18px;
+}
+
+
+/* Quantity */
+
+.selector {
+    display: flex;
+    align-items: center;
+
+}
+
+.selector_input {
+    width: 30px;
+    height: 20px;
+    margin: 3px 10px;
+    text-align: center;
+
+}
+
+
+.btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.womanProducts{
+    padding: 0 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap:80px;
+    justify-items: center;
+    transition:none;
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 160px;
+
+    
+}
+
+.h2_man{
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: normal;
+    width: 100px;
+}
+

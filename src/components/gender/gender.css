@@ -1,0 +1,52 @@
+.gender {
+    height: 550px;
+    padding: 0 8%;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    transition: width 500ms;
+    cursor: pointer;
+    height: 440px;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    transition: width 500ms, font-size 500ms;
+    box-shadow: 3px 7px 10px rgb(104, 102, 102);
+    text-decoration: none;
+}
+
+.box:hover {
+    width: 120%;
+    font-size: 48px;
+}
+
+.main_left {
+    background-image: url(../../../public/assets/img_gender/man.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.main_center {
+    background-image: url(../../../public/assets/img_gender/kids.png);
+    background-position: center;
+    background-size: cover;
+    margin-left: 40px;
+}
+
+.main_right {
+    background-image: url(../../../public/assets/img_gender/woman.png);
+    background-position: center;
+    background-size: cover;
+    margin-left: 40px;
+}

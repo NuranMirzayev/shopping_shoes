@@ -1,0 +1,196 @@
+.signUp {
+    height: 700px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_form {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+
+    border-radius: 2px solid black;
+
+}
+
+.form_left_img {
+    background-image: url(https://static.nike.com/a/images/w_1536,c_limit/2574502d-9279-41ce-bdb8-3fe948ff69b8/nike-membership.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 400px;
+    height: 600px;
+
+    border-radius: 10px 0 0 10px;
+    position: relative;
+
+
+    animation: smoothSignUp .8s;
+    animation-direction: reverse;
+    z-index: 10;
+}
+
+@keyframes smoothSignUp {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: 500px;
+    }
+}
+
+.span_left_icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+
+
+    border: none;
+    background: none;
+
+    position: relative;
+
+    animation: animText .8s;
+    animation-direction: reverse;
+    z-index: 1000;
+}
+
+@keyframes animText {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: 180px;
+    }
+}
+
+.a_left_text {
+    font-size: 22px;
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.form_sign_up {
+    padding: 0 8%;
+    height: 600px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    animation: outPut 1s;
+}
+
+@keyframes outPut {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#h3 {
+    text-align: center;
+}
+
+.input {
+    height: 40px;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    margin-top: 18px;
+
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+        inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.span_errors {
+    height: 10px;
+    display: flex;
+}
+
+.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    margin-top: 20px;
+}
+
+
+
+.checking {
+    height: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.span_check {
+    font-size: 14px;
+}
+
+
+.btn_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 35px;
+    position: relative;
+    background-color: rgb(230, 34, 77);
+    border-radius: 5px;
+    box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+    padding: 15px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 154px;
+    height: 49px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn_submit::before {
+    content: "";
+    background-color: rgb(248, 50, 93);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 700ms ease-in-out;
+    display: inline-block;
+}
+
+.btn_submit:hover::before {
+    width: 100%;
+}

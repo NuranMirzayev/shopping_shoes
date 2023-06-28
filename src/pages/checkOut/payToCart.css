@@ -1,0 +1,45 @@
+.payToCart_box_container{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin-top: 40px;
+    /* width: 400px; */
+}
+
+
+.payToCart_left_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+}
+
+.payToCart_left_input{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+    margin: 10px;
+    height: 50px;
+}
+
+.payToCart_left_input:focus{
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+        -13px -13px 100px #ffffff;
+}
+
+.payToCart_right_container{
+    margin-top: 60px  
+}
+
+.payToCart_left_form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}

@@ -1,0 +1,174 @@
+.Product {
+  /* padding: 0 8%; */
+
+  height: 400px;
+  width: 350px;
+  margin: 30px 0;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  top: 0;
+}
+
+.Product:hover .product_infoes_icons {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.Product:hover .product_img {
+  filter: blur(6px);
+  animation: anim 3s infinite;
+}
+
+/* @keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+
+  33% {
+    transform: translateY(-20px);
+  }
+
+  66% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  } */
+
+/* 0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  } 
+}*/
+
+
+.top_product {
+  height: 400px;
+  width: 350px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 80px;
+  justify-items: center;
+  align-items: center;
+
+
+}
+
+.product_img {
+  transition: 0.2s ease-in;
+
+  height: 400px;
+  width: 350px;
+  border-radius: 10px;
+
+  object-fit: cover;
+  object-position: center;
+
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22),
+  0 5px 14px 0 rgba(0, 0, 0, .18);
+}
+
+
+.product_infoes_icons {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+  position: absolute;
+  color: black;
+  text-decoration: none;
+}
+
+.product_infoes_icons p {
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 700;
+  text-align: center;
+  color: black;
+}
+
+.name_p {
+  font-size: 34px;
+  text-align: center;
+}
+
+.gender_p {
+  opacity: 0.39;
+  font-size: 22px;
+  color: black;
+  text-align: center;
+}
+
+.price_p {
+  font-weight: 600;
+  font-size: 26px;
+  text-align: center;
+}
+
+.red {
+  color: red;
+  padding-left: 15px;
+}
+
+.test {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart_btn.active {
+  color: rgb(121, 2, 121);
+  ;
+  transform: scale(1.1);
+}
+
+.seeMore {
+  height: 50px;
+  width: 180px;
+  color: black;
+  font-weight: 500;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.icon_test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Test */
+
+.product_windows {
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}

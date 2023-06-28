@@ -1,0 +1,48 @@
+.left {
+    padding: 0 8%;
+    height: 850px;
+    width: 50%;
+    /* color: aliceblue; */
+}
+
+.left__h1 {
+    font-size: 50px;
+    margin-top: 140px;
+}
+
+.left_text_p__2 {
+    margin-top: 40px;
+    line-height: 1.5;
+    font-weight: 700;
+    /* color: red; */
+}
+
+.left_text_p__3 {
+    margin-top: 40px;
+    line-height: 1.5;
+}
+
+.left_btn {
+    background-color: #CD3333;
+    color: white;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
+}
+
+.left_btn_icon {
+    font-size: 20px;
+    margin-left: 5px;
+    position: relative;
+    top: 5px;
+}
+
+.left_btn:hover .left_btn_icon {
+    display: none;
+}
