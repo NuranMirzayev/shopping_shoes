@@ -12,18 +12,22 @@
     flex-direction: column;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
         0 3px 6px rgba(0, 0, 0, 0.23);
+    
+
 }
 
 .window_cart.active {
-    animation: modal_win 0.3s ease-in-out;
+    animation: modal_win 0.3s ease-in-out ;
 }
+
+
 
 @keyframes modal_win {
     0% {
         transform: translateX(440px);
     }
 
-    100% {
+    100%{
         transform: translateX(0);
     }
 }
