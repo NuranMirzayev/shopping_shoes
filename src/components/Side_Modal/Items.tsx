@@ -46,7 +46,7 @@ const Items = () => {
                                 <h3 style={{ maxHeight: '70px',maxWidth:'150', textOverflow: 'ellipsis', whiteSpace: "normal",overflow: "hidden"}}>{item.name}</h3>
                                 <p>Price:{(item.price * item.cartQuantity).toFixed(2) } </p>
                                 <p >Size:
-                                    {/* {selectSize} */}
+                                    {item.size}
                                 </p>
                                 <div className='selector'>
                                     <button className='selector_min btn' onClick={() => { handleCLickMin(item)}} >-</button> 

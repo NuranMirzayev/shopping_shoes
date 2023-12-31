@@ -13,6 +13,7 @@ import { allProducts } from "../../utils/types";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addItem, getAllTotal } from "../../features/ShoppingCart/CartSlice";
 import "./modal_windows.css";
+import { toast } from "react-toastify";
 
 interface ModalWindowsProps {
   active: boolean;
@@ -30,7 +31,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
     "./assets/AllProductsImg/" + allPr.secondImg + ".png",
     "./assets/AllProductsImg/" + allPr.threeImg + ".png",
   ];
-  
+
   const size = ['40', '40.5', '41', '41.5', '42', '42.5', '43', '43.5', '44'];
   const [sizeName, setSizeName] = useState('');
   const [selectedImg, setSelectedImg] = useState(chooseImg[0]);
@@ -41,19 +42,25 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
   useEffect(() => {
     dispatch(getAllTotal())
   }, [cart, dispatch])
-  
+
   const handleChange = (event: SelectChangeEvent) => {
-    setSizeName(event.target.value as string);
-    console.log(event.target.value as string);
-    
+    setSizeName(event.target.value as string);    
   };
 
   const handleSelectedImg = (index: number) => {
     setSelectedImg(chooseImg[index]);
   };
 
-  const handleClickAddItem = (product:allProducts) => {
-    dispatch(addItem(product));
+  const handleClickAddItem = (product: allProducts) => {
+    const selectedSize = sizeName;
+    if (!selectedSize) {
+      toast.info(`You need add size`, {
+        position: 'bottom-left'
+      })
+    } 
+      dispatch(addItem({ ...product, size: selectedSize }));
+    
+
   }
 
   return (
@@ -103,7 +110,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
                       <del>{"₪" + allPr.sale.toFixed(2)}</del>
                     </span>
                   ) : (
-                      "₪" + allPr.price.toFixed(2)
+                    "₪" + allPr.price.toFixed(2)
                   )}
                 </Typography>
               </Box>
@@ -124,22 +131,21 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
                     id="demo-simple-select"
 
                     //Cerez Value mi polucim dannie i vivodim na ekran 
-                    
+
                     value={sizeName}
                     label="Size"
                     onChange={handleChange}
-                    // onClick={() => handleClickAddItem(allPr)}
+                  // onClick={() => handleClickAddItem(allPr)}
                   >
                     {size.map((size) => (
-                      <MenuItem 
-                      // key={size} 
-                      value={size}>
+                      <MenuItem
+                        // key={size} 
+                        value={size}>
                         {size}
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
-                <p>{sizeName}</p>
               </Box>
             </Box>
 
@@ -157,8 +163,8 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
                 onClick={() => handleClickAddItem(allPr)}
                 onChange={() => handleChange}
               >
+                <span className="add_icon"> &#10003; </span> 
                 <span className="textAdd">Buy</span>
-                <span className="add_icon"> &#10003; </span>
               </button>
               <button className="btn_focus heart">
                 <span className="textHeart">Favourite</span>

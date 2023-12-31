@@ -8,11 +8,14 @@
     text-decoration: none;
     list-style: none;
     margin-bottom: 160px;
-
     
+}
+.kids{
+    margin-top: 90px;
 }
 
 .h2_kids{
+    
     margin: 0 auto;
     width: 100%;
     margin-top: 20px;

@@ -23,7 +23,7 @@ export interface IUserData {
 export interface allProducts {
 mainImg?: string,
 description?: string,
-name?: string,
+name: string,
 price: number,
 firsImg?: string,
 secondImg?: string,
@@ -32,11 +32,11 @@ category?: string,
 gender?: string,
 sale?:number,
 isLike:boolean,
-id: number,
+id: number | string,
 newArrivals?:string,
 sizeMain?: []
     cartQuantity?:number | any,
-size?: [number, number, number, number, number, number, number, number, number]
+size?: string
 }
 
 ///Auth

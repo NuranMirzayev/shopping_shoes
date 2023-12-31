@@ -59,10 +59,7 @@ function App() {
               {/* <Route path='/checkOut' element={<Country />} /> */}
 
               <Route path='/checkOut' element={<MainInfo />} />
-
-
             </Routes>
-
             <Footer />
 
           </div>

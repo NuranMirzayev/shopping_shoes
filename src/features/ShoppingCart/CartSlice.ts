@@ -22,8 +22,8 @@ export const CartSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action: PayloadAction<allProducts>) => {
-            const itemIndex = state.items.findIndex((item) => item.id === action.payload.id);
-            if (itemIndex >= 0) {
+            const itemIndex = state.items.findIndex((item) => item.id === action.payload.id && item.size === action.payload.size);
+            if (itemIndex >= 0 ) {
                 state.items[itemIndex].cartQuantity += 1;
                 toast.info(`increased ${state.items[itemIndex].name} cart quantuty`, {
                     position: 'bottom-left'
@@ -39,9 +39,16 @@ export const CartSlice = createSlice({
             localStorage.setItem("items", JSON.stringify(state.items));
         },
         removeItem: (state, action: PayloadAction<allProducts>) => {
-            const index = state.items.filter(item => item.id !== action.payload.id);
-
+            const index = state.items.filter(item => item.id !== action.payload.id && item.size !== action.payload.size);
+            const remainingItems = state.items.filter(item => {
+                if (item.id === action.payload.id) {
+                    return item.size !== action.payload.size;
+                }
+                return true;
+            })
             state.items = index
+            state.items = remainingItems;
+            
             localStorage.setItem("items", JSON.stringify(state.items));
             toast.error(`${action.payload.name} remove from cart`, {
                 position: 'bottom-left'

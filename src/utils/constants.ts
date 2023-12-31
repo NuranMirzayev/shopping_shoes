@@ -77,7 +77,7 @@ export const AllProducts:Array<allProducts> = [
     category: "lifeStyle",
     gender: "Men's",
     isLike:false,
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     id: 1
   },
   {
@@ -92,7 +92,7 @@ export const AllProducts:Array<allProducts> = [
     gender: "Men's" || "Sales",
     sale:599.90,
     isLike:false,
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     id: 2
   },
   {
@@ -105,7 +105,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_3",
     category: "walking",
     gender: "Men's",
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     isLike: false,
     id: 3,
     newArrivals:"new"
@@ -120,7 +120,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_4",
     category: "football",
     isLike:false,
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     gender: "Men's",
     id: 4
   },
@@ -134,7 +134,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_5",
     category: "running",
     gender: "Men's",
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     isLike: false,
     id: 5
   },
@@ -148,7 +148,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_6",
     category: "basketball",
     gender: "Men's",
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     isLike: false,
     id: 6
   },
@@ -162,7 +162,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_7",
     category: "basketball",
     gender: "Men's",
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     isLike: false,
     id: 7,
     newArrivals:"new"
@@ -177,7 +177,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_8",
     category: "lifeStyle",
     gender: "Men's",
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     isLike: false,
     id: 8
   },
@@ -192,7 +192,7 @@ export const AllProducts:Array<allProducts> = [
     category: "lifeStyle",
     gender: "Men's",
     isLike:false,
-    size: [40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44],
+    size: "",
     id: 9,
     newArrivals:"new"
   },
@@ -206,7 +206,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_11",
     category: "lifeStyle",
     gender: "Women's",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false, 
     id: 11
   },
@@ -220,7 +220,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_13",
     category: "walking",
     gender: "Women's",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 13
   },
@@ -235,7 +235,7 @@ export const AllProducts:Array<allProducts> = [
     category: "sales",
     gender: "Women's" || "Sales",
     sale:509.90,
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 12
   },
@@ -249,7 +249,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_14",
     category: "football",
     isLike:false,
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     gender: "Women's",
     id: 14,
     newArrivals:"new"
@@ -263,7 +263,7 @@ export const AllProducts:Array<allProducts> = [
     secondImg: "secondImg_15",
     threeImg: "threeImg_15",
     category: "running",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     gender: "Women's",
     isLike:false,
     id: 15
@@ -277,7 +277,7 @@ export const AllProducts:Array<allProducts> = [
     secondImg: "secondImg_16",
     threeImg: "threeImg_16",
     category: "basketball",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     gender: "Women's",
     isLike:false,
     id: 16
@@ -292,7 +292,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_17",
     category: "basketball",
     gender: "Women's",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 17,
     newArrivals:"new"
@@ -307,7 +307,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_18",
     category: "lifeStyle",
     gender: "Women's",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 18,
     newArrivals:"new"
@@ -322,7 +322,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_19",
     category: "lifeStyle",
     gender: "Women's",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id:19
   },
@@ -336,7 +336,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_21",
     category: "lifeStyle",
     gender: "Kids'",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 21
   },
@@ -352,7 +352,7 @@ export const AllProducts:Array<allProducts> = [
     gender: "Kids'",
     isLike:false,
     id: 23,
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     newArrivals: "new"
   },
   {
@@ -366,7 +366,7 @@ export const AllProducts:Array<allProducts> = [
     category: "sales",
     gender: "Kids'" || "Sales",
     sale:409.90,
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 22
   },
@@ -380,7 +380,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_24",
     category: "football",
     isLike:false,
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     gender: "Kids'",
     id: 24
   },
@@ -394,7 +394,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_25",
     category: "running",
     gender: "Kids'",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 25
   },
@@ -408,7 +408,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_26",
     category: "basketball",
     gender: "Kids'",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 26,
     newArrivals:"new"
@@ -423,7 +423,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_27",
     category: "basketball",
     gender: "Kids'",
-    size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    size: "",
     isLike: false,
     id: 27
   },
@@ -437,7 +437,7 @@ export const AllProducts:Array<allProducts> = [
     threeImg: "threeImg_28",
     category: "lifeStyle",
     gender: "Kids'",
-    // size: [36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40],
+    // size: "",
     isLike: false,
     id: 28,
     newArrivals:"new"
