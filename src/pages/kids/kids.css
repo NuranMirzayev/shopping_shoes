@@ -15,12 +15,10 @@
 }
 
 .h2_kids{
-    
-    margin: 0 auto;
-    width: 100%;
+    width: 100vw;
+    text-align: center;
     margin-top: 20px;
     font-size: 32px;
     font-weight: normal;
-    width: 100px;
 }
 
