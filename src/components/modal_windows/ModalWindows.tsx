@@ -36,7 +36,6 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 	const cart = useAppSelector(state => state.cart)
 
 	const [open, setOpen] = useState(false)
-	// const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false)
 
 	useEffect(() => {
@@ -64,7 +63,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 	return (
 		<Modal
 			className={active ? 'modal_windows active' : ''}
-			open={active}
+			open={open}
 			onClose={handleClose}
 			aria-labelledby='modal-modal-title'
 			aria-describedby='modal-modal-description'
