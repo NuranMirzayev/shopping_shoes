@@ -79,7 +79,6 @@ const AllProduct = ({ allPr }: Props) => {
 						setActive={setWindowOpen}
 						allPr={allPr}
 					/>
-					{/* <NewModalWindows /> */}
 				</div>
 			) : null}
 		</div>
