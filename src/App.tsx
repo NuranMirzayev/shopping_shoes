@@ -20,6 +20,7 @@ import MainInfo from './pages/checkOut/MainInfo'
 import Loading from './pages/load/Loading'
 import LogIn from './pages/logIn/LogIn'
 import SignUp from './pages/signUp/SignUp'
+import { MWProviders } from './provides/ModalWindowsContext'
 import { AllProducts } from './utils/constants'
 
 function App() {
@@ -42,22 +43,23 @@ function App() {
 					</div>
 					<ToastContainer />
 					<NavBar filterAll={AllProducts} />
+					<MWProviders>
+						<Routes>
+							<Route path='/*' element={<Home />} />
+							<Route path='/men' element={<Man />} />
+							<Route path='/women' element={<Woman />} />
+							<Route path='/kids' element={<Kids />} />
+							<Route path='/sale' element={<Sale />} />
+							<Route path='/about us' element={<About />} />
 
-					<Routes>
-						<Route path='/*' element={<Home />} />
-						<Route path='/men' element={<Man />} />
-						<Route path='/women' element={<Woman />} />
-						<Route path='/kids' element={<Kids />} />
-						<Route path='/sale' element={<Sale />} />
-						<Route path='/about us' element={<About />} />
+							<Route path='/log in' element={<LogIn />} />
+							<Route path='/sign up' element={<SignUp />} />
+							{/* <Route path='/checkOut' element={<CheckOut />} /> */}
+							{/* <Route path='/checkOut' element={<Country />} /> */}
 
-						<Route path='/log in' element={<LogIn />} />
-						<Route path='/sign up' element={<SignUp />} />
-						{/* <Route path='/checkOut' element={<CheckOut />} /> */}
-						{/* <Route path='/checkOut' element={<Country />} /> */}
-
-						<Route path='/checkOut' element={<MainInfo />} />
-					</Routes>
+							<Route path='/checkOut' element={<MainInfo />} />
+						</Routes>
+					</MWProviders>
 					<Footer />
 				</div>
 			)}

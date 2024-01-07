@@ -1,51 +1,50 @@
-
 export interface Item {
-    title: string,
-    route: string
+	title: string
+	route: string
 }
 
 export interface ImgUrl {
-    imgUrl:string    
+	imgUrl: string
 }
 
 export interface Img extends ImgUrl {
-    id:number
+	id: number
 }
 
 export interface IUserData {
-    _id: string,
-    nameD: string | null,
-    avatar: string | null
+	_id: string
+	nameD: string | null
+	avatar: string | null
 }
 
 ///Test
 
 export interface allProducts {
-mainImg?: string,
-description?: string,
-name: string,
-price: number,
-firsImg?: string,
-secondImg?: string,
-threeImg?: string,
-category?: string,
-gender?: string,
-sale?:number,
-isLike:boolean,
-id: number | string,
-newArrivals?:string,
-sizeMain?: []
-    cartQuantity?:number | any,
-size?: string
+	mainImg?: string
+	description?: string
+	name: string
+	price: number
+	firsImg?: string
+	secondImg?: string
+	threeImg?: string
+	category?: string
+	gender?: string
+	sale?: number
+	isLike: boolean
+	id: number | string
+	newArrivals?: string
+	sizeMain?: []
+	cartQuantity?: number | any
+	size?: string
 }
 
 ///Auth
 
-// export interface PWD { 
+// export interface PWD {
 //     password: string
 // }
 
-// export interface UserData { 
+// export interface UserData {
 //     email?:null,
 //     id?:null,
 //     token?: null,
@@ -67,4 +66,3 @@ size?: string
 //     email: string,
 
 // }
-

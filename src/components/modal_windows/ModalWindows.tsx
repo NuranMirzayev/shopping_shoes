@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Button, Modal, Typography } from '@mui/material'
@@ -13,20 +13,26 @@ import { allProducts } from '../../utils/types'
 import { toast } from 'react-toastify'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { addItem, getAllTotal } from '../../features/ShoppingCart/CartSlice'
+import { ModalWindowsContext } from '../../provides/ModalWindowsContext'
 import './modal_windows.css'
 
-interface ModalWindowsProps {
-	active: boolean
-	setActive: (active: boolean) => void
-	allPr: allProducts
-}
+// interface ModalWindowsProps {
+// 	// active: boolean
+// 	// setActive: (active: boolean) => void
+// 	allPr: allProducts
+// }
 
-const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
+// const ModalWindows = ({ allPr }: ModalWindowsProps) => {
+const ModalWindows = () => {
+	const { isOpen, closeModal, product } = useContext(ModalWindowsContext)
+
+	console.log('product Men2 => ', product)
+
 	const chooseImg: string[] = [
-		'./assets/AllProductsImg/' + allPr.mainImg + '.png',
-		'./assets/AllProductsImg/' + allPr.firsImg + '.png',
-		'./assets/AllProductsImg/' + allPr.secondImg + '.png',
-		'./assets/AllProductsImg/' + allPr.threeImg + '.png',
+		'./assets/AllProductsImg/' + product.mainImg + '.png',
+		'./assets/AllProductsImg/' + product.firsImg + '.png',
+		'./assets/AllProductsImg/' + product.secondImg + '.png',
+		'./assets/AllProductsImg/' + product.threeImg + '.png',
 	]
 
 	const size = ['40', '40.5', '41', '41.5', '42', '42.5', '43', '43.5', '44']
@@ -47,38 +53,45 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 		setSelectedImg(chooseImg[index])
 	}
 
-	const handleClickAddItem = (product: allProducts) => {
+	const handleClickAddItem = (productSize: allProducts) => {
 		const selectedSize = sizeName
 		if (!selectedSize) {
 			toast.info(`You need add size`, {
 				position: 'bottom-left',
 			})
+			return productSize == null
 		}
-		dispatch(addItem({ ...product, size: selectedSize }))
+
+		dispatch(addItem({ ...productSize, size: selectedSize }))
 	}
 
 	return (
 		<Modal
-			className={active ? 'modal_windows active' : ''}
-			open={active}
-			onClose={() => setActive(false)}
+			key={product.name}
+			className={isOpen ? 'modal_windows active' : ''}
+			open={isOpen}
+			onClose={closeModal}
 			aria-labelledby='modal-modal-title'
 			aria-describedby='modal-modal-description'
 		>
 			<div
 				data-aos='zoom-up'
-				className={active ? 'modal_windows_page active' : 'modal_windows_page'}
+				className={isOpen ? 'modal_windows_page active' : 'modal_windows_page'}
 			>
 				<div className='modal_windows_content_left'>
 					<div className='modal_windows_img_top'>
-						<img className='kingImg' src={selectedImg} alt={`${allPr.name}`} />
+						<img
+							className='kingImg'
+							src={selectedImg}
+							alt={`${product.name}`}
+						/>
 					</div>
 					<div className='modal_windows_img_bottom'>
 						{chooseImg.map((image: string, index: number) => (
 							<img
 								key={index}
 								src={image}
-								alt={allPr.name}
+								alt={product.name}
 								onClick={() => handleSelectedImg(index)}
 								className='imgAll'
 							/>
@@ -87,7 +100,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 				</div>
 				<div className='modal_windows_content_right'>
 					<div className='modal_windows_content_right_info'>
-						<p className='h1_name_pageProduct'>{allPr.name}</p>
+						<p className='h1_name_pageProduct'>{product.name}</p>
 						<Box
 							sx={{
 								display: 'flex',
@@ -98,19 +111,19 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 						>
 							<Box sx={{ display: 'flex', flexDirection: 'column' }}>
 								<Typography component='h6' variant='h6'>
-									{allPr.gender}
+									{product.gender}
 								</Typography>
 								<Typography component='p' sx={{ fontSize: '22px' }}>
-									{allPr.category}
+									{product.category}
 								</Typography>
 								<Typography component='h3' variant='h5' sx={{ mb: 4 }}>
-									{allPr.sale ? (
+									{product.sale ? (
 										<span>
-											{'₪' + allPr.price.toFixed(2)}
-											<del>{'₪' + allPr.sale.toFixed(2)}</del>
+											{'₪' + product!.price.toFixed(2)}
+											<del>{'₪' + product.sale.toFixed(2)}</del>
 										</span>
 									) : (
-										'₪' + allPr.price.toFixed(2)
+										'₪' + product.price.toFixed(2)
 									)}
 								</Typography>
 							</Box>
@@ -137,10 +150,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 										// onClick={() => handleClickAddItem(allPr)}
 									>
 										{size.map(size => (
-											<MenuItem
-												// key={size}
-												value={size}
-											>
+											<MenuItem key={size} value={size}>
 												{size}
 											</MenuItem>
 										))}
@@ -149,7 +159,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 							</Box>
 						</Box>
 
-						<p className='p_descrip'>{allPr.description}</p>
+						<p className='p_descrip'>{product.description}</p>
 
 						<Box
 							sx={{
@@ -161,7 +171,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 						>
 							<button
 								className='btn_focus add'
-								onClick={() => handleClickAddItem(allPr)}
+								onClick={() => handleClickAddItem(product)}
 								onChange={() => handleChange}
 							>
 								<span className='add_icon'> &#10003; </span>
@@ -176,7 +186,7 @@ const ModalWindows = ({ active, setActive, allPr }: ModalWindowsProps) => {
 				</div>
 
 				<div className='btn_close'>
-					<Button onClick={() => setActive(false)} color='inherit'>
+					<Button onClick={closeModal} color='inherit'>
 						<CloseIcon className='btn_close_icon' />
 					</Button>
 				</div>

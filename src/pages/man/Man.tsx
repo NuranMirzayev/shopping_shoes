@@ -7,6 +7,7 @@ import './man.css'
 // FIXME:
 
 const Man = () => {
+	// const {product}= useContext(ModalWindowsContext)
 	return (
 		<div className='man'>
 			<div>
@@ -16,7 +17,7 @@ const Man = () => {
 				{AllProducts.filter(item => {
 					return item ? item.gender === "Men's" : null
 				}).map(item => (
-					<AllProduct key={item.name} allPr={item} />
+					<AllProduct key={item.name} products={item} />
 				))}
 			</div>
 		</div>

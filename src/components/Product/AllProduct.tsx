@@ -1,40 +1,42 @@
-import { useState } from 'react'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import { Button, IconButton, Tooltip } from '@mui/material'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import {
+	ModalWindowsContext,
+	Product,
+} from '../../provides/ModalWindowsContext'
+import ModalWindows from '../modal_windows/ModalWindows'
 import './Product.css'
 
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import { Button, IconButton, Tooltip } from '@mui/material'
-import { allProducts } from '../../utils/types'
-
-import NavigateNextIcon from '@mui/icons-material/NavigateNext'
-import ModalWindows from '../modal_windows/ModalWindows'
-
-interface Props {
-	allPr: allProducts
+interface AllProductProps {
+	products: Product
 }
 
-const AllProduct = ({ allPr }: Props) => {
-	const [heart, setHeart] = useState(allPr.isLike)
-	let [windowOpen, setWindowOpen] = useState(false)
+const AllProduct = ({ products }: AllProductProps) => {
+	const { isOpen, openModal } = useContext(ModalWindowsContext)
+	// console.log('product =>', product)
+
+	const [heart, setHeart] = useState(products.isLike)
 
 	return (
 		<div className='Product'>
 			<div className='top_product'>
 				<img
 					className='product_img'
-					src={'./assets/AllProductsImg/' + allPr.mainImg + '.png'}
-					alt={allPr.name}
+					src={`./assets/AllProductsImg/${products.mainImg}.png`}
+					alt={products.name}
 				/>
 				<div className='product_infoes_icons'>
-					<p className='name_p'>{allPr.name}</p>
-					{allPr.sale ? (
+					<p className='name_p'>{products.name}</p>
+					{products.sale ? (
 						<p className='price_p'>
-							{`₪${allPr.price.toFixed(2)}`}{' '}
-							<del className='red'>{`₪${allPr.sale.toFixed(2)}`}</del>{' '}
+							{`₪${products!.price.toFixed(2)}`}{' '}
+							<del className='red'>{`₪${products.sale.toFixed(2)}`}</del>{' '}
 						</p>
 					) : (
-						<p className='price_p'>{`₪${allPr.price.toFixed(2)}`}</p>
+						<p className='price_p'>{`₪${products.price.toFixed(2)}`}</p>
 					)}
 					<div className='test'>
 						<Tooltip title='Favorite' arrow>
@@ -46,18 +48,17 @@ const AllProduct = ({ allPr }: Props) => {
 							</IconButton>
 						</Tooltip>
 						<Link
-							to={`#/${allPr.name}/${allPr.id}`}
+							to={`#/${products.name}/${products.id}`}
 							className='product_windows'
 						>
 							<Tooltip title='See More' arrow>
 								<Button
 									color='inherit'
 									className='seeMore'
-									onClick={() => setWindowOpen(true)}
+									onClick={() => openModal(products)}
 									sx={{
 										fontSize: '15.5px',
 										fontWeight: '600',
-										// color:'#CD3333'
 									}}
 								>
 									See More
@@ -72,15 +73,11 @@ const AllProduct = ({ allPr }: Props) => {
 					</div>
 				</div>
 			</div>
-			{windowOpen ? (
+			{isOpen && (
 				<div className='modal'>
-					<ModalWindows
-						active={windowOpen}
-						setActive={setWindowOpen}
-						allPr={allPr}
-					/>
+					<ModalWindows />
 				</div>
-			) : null}
+			)}
 		</div>
 	)
 }
