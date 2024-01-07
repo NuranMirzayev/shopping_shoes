@@ -59,7 +59,7 @@ const ModalWindows = () => {
 			toast.info(`You need add size`, {
 				position: 'bottom-left',
 			})
-			return productSize == null
+			return
 		}
 
 		dispatch(addItem({ ...productSize, size: selectedSize }))
