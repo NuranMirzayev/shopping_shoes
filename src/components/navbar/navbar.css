@@ -145,14 +145,14 @@ b {
   width: 100%;
   height: auto;
   border-radius: 5px;
-}
+}*/
 
 .fillter_photo_name {
-  display: block;
-  font-weight: bold;
-  margin-top: 10px;
-  text-align: center;
-} */
+	display: block;
+	margin-top: 10px;
+	text-align: center;
+	width: 40%;
+}
 
 /* @media (max-width: 768px) {
 	.div_fillter {
@@ -220,6 +220,10 @@ b {
 	color: white;
 }
 
+.link_fillter:hover span del {
+	color: black !important;
+}
+
 .fillter_photo {
 	border-radius: 50%;
 	width: 80px;
@@ -230,4 +234,12 @@ b {
 
 .fillter_photo_name {
 	margin-right: 40px;
+}
+
+.price_p_filter {
+	display: flex;
+	flex-direction: column;
+	font-weight: 600;
+	font-size: 16px;
+	text-align: end;
 }

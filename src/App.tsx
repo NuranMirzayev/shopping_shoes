@@ -42,8 +42,9 @@ function App() {
 						</IconButton>
 					</div>
 					<ToastContainer />
-					<NavBar filterAll={AllProducts} />
 					<MWProviders>
+						<NavBar filterAll={AllProducts} />
+
 						<Routes>
 							<Route path='/*' element={<Home />} />
 							<Route path='/men' element={<Man />} />

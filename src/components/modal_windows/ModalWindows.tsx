@@ -26,8 +26,6 @@ import './modal_windows.css'
 const ModalWindows = () => {
 	const { isOpen, closeModal, product } = useContext(ModalWindowsContext)
 
-	console.log('product Men2 => ', product)
-
 	const chooseImg: string[] = [
 		'./assets/AllProductsImg/' + product.mainImg + '.png',
 		'./assets/AllProductsImg/' + product.firsImg + '.png',

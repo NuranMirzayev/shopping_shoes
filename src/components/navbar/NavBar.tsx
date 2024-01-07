@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton'
 import Stack from '@mui/material/Stack'
 import { red } from '@mui/material/colors'
 import { createTheme } from '@mui/material/styles'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import NoAuth from '../../pages/profile/NoAuth'
 import { navItems } from '../../utils/constants'
@@ -17,7 +17,12 @@ import Navitem from './Navitem'
 import { useAuth } from '../../app/useAuth'
 import { getAllTotal } from '../../features/ShoppingCart/CartSlice'
 import Profile from '../../pages/profile/Profile'
+import {
+	ModalWindowsContext,
+	Product,
+} from '../../provides/ModalWindowsContext'
 import { allProducts } from '../../utils/types'
+import ModalWindows from '../modal_windows/ModalWindows'
 import './navbar.css'
 
 const theme = createTheme({
@@ -38,6 +43,8 @@ interface Props {
 }
 
 const NavBar = ({ filterAll }: Props) => {
+	const { isOpen, openModal } = useContext(ModalWindowsContext)
+
 	const [cartOpen, setCartOpen] = useState(false)
 
 	const { cartTotalQuantity } = useAppSelector(state => state.cart)
@@ -60,6 +67,10 @@ const NavBar = ({ filterAll }: Props) => {
 			item.name?.toLowerCase().includes(value.toLowerCase())
 		)
 		setSearchResults(results)
+	}
+
+	const handleClick = (product: Product) => {
+		openModal(product)
 	}
 
 	return (
@@ -93,22 +104,45 @@ const NavBar = ({ filterAll }: Props) => {
 						onChange={handleSearch}
 					/>
 				</div>
-				<ul className='fillter'>
-					{!searchTerm
-						? searchTerm
-						: searchResults.map(product => (
-								<li className='div_fillter' key={product.id}>
-									<div className='link_fillter'>
-										<img
-											className='fillter_photo'
-											src={`./assets/AllProductsImg/${product.mainImg}.png`}
-											alt={product.name}
-										/>
-										<span className='fillter_photo_name'>{product.name}</span>
-									</div>
-								</li>
-						  ))}
-				</ul>
+				{!isOpen ? (
+					<ul className='fillter'>
+						{!searchTerm
+							? searchTerm
+							: searchResults.map(product => (
+									<li
+										className='div_fillter'
+										onClick={() => handleClick(product)}
+										key={product.name}
+									>
+										<div className='link_fillter'>
+											<img
+												className='fillter_photo'
+												src={`./assets/AllProductsImg/${product.mainImg}.png`}
+												alt={product.name}
+											/>
+											<span className='fillter_photo_name'>{product.name}</span>
+											{product.sale ? (
+												<p className='price_p_filter'>
+													{`₪${product!.price.toFixed(2)}`}
+													<span>
+														<del className='red'>{`₪${product.sale.toFixed(
+															2
+														)}`}</del>
+													</span>
+												</p>
+											) : (
+												<p className='price_p_filter'>{`₪${product.price.toFixed(
+													2
+												)}`}</p>
+											)}
+										</div>
+									</li>
+							  ))}
+					</ul>
+				) : (
+					<ModalWindows />
+				)}
+
 				<IconButton color='inherit' className='navIcon'>
 					<FavoriteBorderIcon />
 				</IconButton>

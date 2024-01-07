@@ -16,7 +16,6 @@ interface AllProductProps {
 
 const AllProduct = ({ products }: AllProductProps) => {
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
-	// console.log('product =>', product)
 
 	const [heart, setHeart] = useState(products.isLike)
 
