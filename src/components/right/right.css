@@ -1,115 +1,110 @@
 .right {
-    height: 850px;
-    width: 50%;
-    padding: 0 8%;
-    overflow-x: hidden;
+	height: 850px;
+	width: 50%;
+	padding: 0 8%;
+	overflow-x: hidden;
 }
 
 .right_top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
+	position: relative;
 }
 
 .right_top_img {
-    width: 400px;
-    height: 345px;
-    margin-top: 40px;
+	width: 400px;
+	height: 345px;
+	margin-top: 60px;
 }
 
 .right_bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 70px;
 }
 
 .right_bottom_box {
-    width: 180px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 20px;
-    background-color: #E1CAFF;
-    border-radius: 10px;
+	width: 180px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px;
+	background-color: #e1caff;
+	border-radius: 10px;
 
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .right_bottom_img {
-    width: 140px;
+	width: 140px;
 }
 
 .right_bottom_img:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .bg_animation1 {
-    height: 400px;
-    width: 400px;
-    border: 5px solid #E1CAFF;
-    animation: an_inf 6.5s infinite linear;
-    position: absolute;
-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-filter: drop-shadow(0 0 20px);
-
+	height: 400px;
+	width: 400px;
+	border: 5px solid #e1caff;
+	animation: an_inf 6.5s infinite linear;
+	position: absolute;
+	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	filter: drop-shadow(0 0 20px);
 }
 .bg_animation2 {
-    height: 400px;
-    width: 400px;
-    border: 6px solid #9979c4;
-    animation: an_inf2 4.5s infinite linear;
-    position: absolute;
-border-radius: 71% 49% 66% 84% / 62% 55% 45% 58%;
-filter: drop-shadow(0 0 20px);
+	height: 400px;
+	width: 400px;
+	border: 6px solid #9979c4;
+	animation: an_inf2 4.5s infinite linear;
+	position: absolute;
+	border-radius: 71% 49% 66% 84% / 62% 55% 45% 58%;
+	filter: drop-shadow(0 0 20px);
 }
 .bg_animation3 {
-    border: 9px solid #43236d;
-    height: 400px;
-    width: 400px;
-    animation: an_inf 9s infinite linear;
-    position: absolute;
-        border-radius: 26% 74% 55% 45% / 62% 75% 25% 38%;
-filter: drop-shadow(0 0 20px);
-
+	border: 9px solid #43236d;
+	height: 400px;
+	width: 400px;
+	animation: an_inf 9s infinite linear;
+	position: absolute;
+	border-radius: 26% 74% 55% 45% / 62% 75% 25% 38%;
+	filter: drop-shadow(0 0 20px);
 }
 
 .bg_animation4 {
-    border: 2px solid #5d0bc9;
-    height: 400px;
-    width: 400px;
-    animation: an_inf2 7s infinite linear;
-    position: absolute;
-border-radius: 38% 62% 29% 71% / 62% 22% 78% 38%;
-    filter: drop-shadow(0 0 20px);
-
+	border: 2px solid #5d0bc9;
+	height: 400px;
+	width: 400px;
+	animation: an_inf2 7s infinite linear;
+	position: absolute;
+	border-radius: 38% 62% 29% 71% / 62% 22% 78% 38%;
+	filter: drop-shadow(0 0 20px);
 }
 
-
 @keyframes an_inf {
-    to {
-        transform: rotate(0deg);
-    }
-    from {
-        transform: rotate(360deg);
-    }
+	to {
+		transform: rotate(0deg);
+	}
+	from {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes an_inf2 {
-    to {
-        transform: rotate(0deg);
-    }
+	to {
+		transform: rotate(0deg);
+	}
 
-    from {
-        transform: rotate(360deg);
-    }
+	from {
+		transform: rotate(360deg);
+	}
 }
 
-
-    /* 10% {
+/* 10% {
         border-radius: 21% 79% 91% 9% / 37% 76% 24% 63%;
     }
 

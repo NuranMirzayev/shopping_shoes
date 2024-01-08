@@ -38,31 +38,8 @@ export interface allProducts {
 	size?: string
 }
 
-///Auth
-
-// export interface PWD {
-//     password: string
-// }
-
-// export interface UserData {
-//     email?:null,
-//     id?:null,
-//     token?: null,
-// }
-
-// enum GenderEnum {
-//     female = "female",
-//     male = "male",
-//     other = "other"
-// }
-
-// export interface IFormInput extends PWD {
-//     firstName: string;
-//     lastName: string;
-//     age: number;
-//     gender: GenderEnum;
-//     check: string;
-//     dateOfBirthday: string;
-//     email: string,
-
-// }
+export interface SelectedFilterType {
+	titleOption: string
+	selectOption: string
+	value: number
+}

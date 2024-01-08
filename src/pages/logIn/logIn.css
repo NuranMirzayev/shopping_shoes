@@ -1,181 +1,174 @@
 .logIn {
-    height: 700px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	max-height: 920px;
+	margin: 120px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .box_form {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-        0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 10px 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 10px 10px 0;
 }
-
 
 /* Left Box */
 
 .left_box_form {
-    height: 600px;
-    width: 500px;
+	height: 600px;
+	width: 500px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-    animation: outPut 1s;
-
+	animation: outPut 1s;
 }
 
 @keyframes outPut {
-    0% {
-        transform: scale(0);
-    }
+	0% {
+		transform: scale(0);
+	}
 
-    100% {
-        transform: scale(1);
-    }
+	100% {
+		transform: scale(1);
+	}
 }
 
 .input_left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    width: 300px;
-    height: 40px;
-    border: none;
-    padding: 1rem;
-    border-radius: 1rem;
-    background: #e8e8e8;
-    margin-top: 26px;
+	width: 300px;
+	height: 40px;
+	border: none;
+	padding: 1rem;
+	border-radius: 1rem;
+	background: #e8e8e8;
+	margin-top: 26px;
 
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-        0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .input_left:focus {
-    outline-color: #e8e8e8;
-    background: #e8e8e8;
-    box-shadow: inset 20px 20px 60px #c5c5c5,
-        inset -20px -20px 60px #ffffff;
-    transition: 0.3s;
+	outline-color: #e8e8e8;
+	background: #e8e8e8;
+	box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+	transition: 0.3s;
 }
 
 .span_errors {
-    height: 10px;
-    display: flex;
+	height: 10px;
+	display: flex;
 }
 
 .logIn_btn_div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .btn_submit_logIn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    margin-top: 45px;
-    position: relative;
-    background-color: rgb(230, 34, 77);
-    border-radius: 5px;
-    box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
-    padding: 15px;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    width: 154px;
-    height: 49px;
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    transition: all .3s ease-in-out;
-    z-index: 1;
-    overflow: hidden;
-    cursor: pointer;
+	margin-top: 45px;
+	position: relative;
+	background-color: rgb(230, 34, 77);
+	border-radius: 5px;
+	box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+	padding: 15px;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	width: 154px;
+	height: 49px;
+	color: #fff;
+	border: none;
+	font-size: 20px;
+	transition: all 0.3s ease-in-out;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
 }
 
 .btn_submit_logIn::before {
-    content: "";
-    background-color: rgb(248, 50, 93);
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 700ms ease-in-out;
-    display: inline-block;
+	content: '';
+	background-color: rgb(248, 50, 93);
+	width: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: width 700ms ease-in-out;
+	display: inline-block;
 }
 
 .btn_submit_logIn:hover::before {
-    width: 100%;
+	width: 100%;
 }
-
 
 /* Right Box */
 
 .right_box_form {
-    width: 400px;
-    height: 600px;
+	width: 400px;
+	height: 600px;
 
-    background: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/1-special-design-nike-shoes-logo-birch-twigley.jpg) no-repeat center;
-    background-size: cover;
+	background: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/1-special-design-nike-shoes-logo-birch-twigley.jpg)
+		no-repeat center;
+	background-size: cover;
 
-    border-radius: 0 10px 10px 0;
-    position: relative;
+	border-radius: 0 10px 10px 0;
+	position: relative;
 
-    animation: smooth .8s;
-    animation-direction: reverse;
-    z-index: 10;
+	animation: smooth 0.8s;
+	animation-direction: reverse;
+	z-index: 10;
 }
 
 @keyframes smooth {
-    0% {
-        right: 0px;
-    }
+	0% {
+		right: 0px;
+	}
 
-    100% {
-        right: 500px;
-    }
+	100% {
+		right: 500px;
+	}
 }
 
 .span_right_icon {
-    border: none;
-    background: none;
+	border: none;
+	background: none;
 
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
+	top: 10px;
+	left: 160px;
+	cursor: pointer;
 
-    top: 10px;
-    left: 160px;
-    cursor: pointer;
+	position: relative;
 
-    position: relative;
-
-    animation: animTextRight .8s;
-    animation-direction: reverse;
-    z-index: 1000;
-    color: white;
+	animation: animTextRight 0.8s;
+	animation-direction: reverse;
+	z-index: 1000;
+	color: white;
 }
 
-
 @keyframes animTextRight {
-    0% {
-        left: 160px;
-    }
+	0% {
+		left: 160px;
+	}
 
-    100% {
-        left: 0px;
-    }
+	100% {
+		left: 0px;
+	}
 }
 
 /* btn_google */
@@ -183,45 +176,44 @@
 .buttonGoogle,
 .buttonMicr,
 .buttonFace {
-    margin: 0 auto;
-    margin-top: 15px;
-    height: 40px;
-    width: 300px;
-    display: flex;
-    padding: 0.5rem 1.4rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    vertical-align: middle;
-    align-items: center;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    gap: 0.75rem;
-    color: rgb(65, 63, 63);
-    background-color: #e8e8e8;
-    cursor: pointer;
-    transition: all .15s ease-in;
+	margin: 0 auto;
+	margin-top: 15px;
+	height: 40px;
+	width: 300px;
+	display: flex;
+	padding: 0.5rem 1.4rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	align-items: center;
+	border-radius: 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	gap: 0.75rem;
+	color: rgb(65, 63, 63);
+	background-color: #e8e8e8;
+	cursor: pointer;
+	transition: all 0.15s ease-in;
 }
 
-.buttonGoogle svg{
-    height: 24px;
+.buttonGoogle svg {
+	height: 24px;
 }
 
 .buttonMicr img,
 .buttonFace img {
-    height: 24px;
+	height: 24px;
 }
 
 .buttonGoogle:hover,
 .buttonMicr:hover {
-    transform: scale(1.02);
-    background-color: #ffffff;
+	transform: scale(1.02);
+	background-color: #ffffff;
 }
 .buttonFace:hover {
-    transform: scale(1.02);
-    background-color: #4267B2;
-    color: #f5f3f3;
+	transform: scale(1.02);
+	background-color: #4267b2;
+	color: #f5f3f3;
 }
-
