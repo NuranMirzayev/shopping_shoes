@@ -15,7 +15,7 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
 import IconButton from '@mui/material/IconButton'
 
 import { ToastContainer } from 'react-toastify'
-import NavBar from './components/navbar/NavBar'
+import MobileNavBar from './components/navbar/MobileNavBar'
 import MainInfo from './pages/checkOut/MainInfo'
 import Loading from './pages/load/Loading'
 import LogIn from './pages/logIn/LogIn'
@@ -43,7 +43,7 @@ function App() {
 					</div>
 					<ToastContainer />
 					<MWProviders>
-						<NavBar filterAll={AllProducts} />
+						<MobileNavBar filterAll={AllProducts} />
 
 						<Routes>
 							<Route path='/*' element={<Home />} />
@@ -55,8 +55,6 @@ function App() {
 
 							<Route path='/log in' element={<LogIn />} />
 							<Route path='/sign up' element={<SignUp />} />
-							{/* <Route path='/checkOut' element={<CheckOut />} /> */}
-							{/* <Route path='/checkOut' element={<Country />} /> */}
 
 							<Route path='/checkOut' element={<MainInfo />} />
 						</Routes>

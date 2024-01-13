@@ -108,6 +108,7 @@ b {
 	background-color: aliceblue;
 	height: 40px;
 	cursor: pointer;
+	margin-left: 40px;
 	/* position: relative; */
 }
 
@@ -169,8 +170,8 @@ b {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	top: 60px;
-	margin-right: 100px;
+	top: 64px;
+	left: 0;
 	background-color: white;
 	width: 30%;
 	z-index: 1;
@@ -242,4 +243,12 @@ b {
 	font-weight: 600;
 	font-size: 16px;
 	text-align: end;
+}
+
+.logoImg {
+	height: 60px;
+}
+
+.custom-bg {
+	background-color: rgb(218, 212, 212);
 }
