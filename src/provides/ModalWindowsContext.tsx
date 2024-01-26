@@ -17,7 +17,6 @@ export type Product = {
 	category?: string
 	gender?: string
 	sale?: number
-	isLike: boolean
 	id: number | string
 	newArrivals?: string
 	sizeMain?: []
@@ -39,7 +38,7 @@ interface ModalProviderProps {
 }
 
 export const ModalWindowsContext = createContext<ModalContextProvider>({
-	product: { name: '', price: 0, isLike: false, id: '' }, // Initialize with default values
+	product: { name: '', price: 0, id: '' }, // Initialize with default values
 	setProduct: () => {},
 	closeModal: () => {},
 	openModal: () => {},
@@ -52,7 +51,6 @@ export const MWProviders = ({ children }: ModalProviderProps) => {
 	const [product, setProduct] = useState<Product>({
 		name: '',
 		price: 0,
-		isLike: false,
 		id: '',
 	})
 

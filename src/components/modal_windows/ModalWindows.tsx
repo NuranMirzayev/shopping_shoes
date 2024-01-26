@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Button, Modal, Typography } from '@mui/material'
@@ -11,18 +11,12 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { allProducts } from '../../utils/types'
 
 import { toast } from 'react-toastify'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { addItem, getAllTotal } from '../../features/ShoppingCart/CartSlice'
+import { useAppDispatch } from '../../app/hooks'
+import { addToFavorites } from '../../features/FavoritesCart/FavoriteSlice'
+import { addItem } from '../../features/ShoppingCart/CartSlice'
 import { ModalWindowsContext } from '../../provides/ModalWindowsContext'
 import './modal_windows.css'
 
-// interface ModalWindowsProps {
-// 	// active: boolean
-// 	// setActive: (active: boolean) => void
-// 	allPr: allProducts
-// }
-
-// const ModalWindows = ({ allPr }: ModalWindowsProps) => {
 const ModalWindows = () => {
 	const { isOpen, closeModal, product } = useContext(ModalWindowsContext)
 
@@ -37,11 +31,11 @@ const ModalWindows = () => {
 	const [sizeName, setSizeName] = useState('')
 	const [selectedImg, setSelectedImg] = useState(chooseImg[0])
 	const dispatch = useAppDispatch()
-	const cart = useAppSelector(state => state.cart)
+	// const cart = useAppSelector(state => state.cart)
 
-	useEffect(() => {
-		dispatch(getAllTotal())
-	}, [cart, dispatch])
+	// useEffect(() => {
+	// 	dispatch(getAllTotal())
+	// }, [cart, dispatch])
 
 	const handleChange = (event: SelectChangeEvent) => {
 		setSizeName(event.target.value as string)
@@ -61,6 +55,20 @@ const ModalWindows = () => {
 		}
 
 		dispatch(addItem({ ...productSize, size: selectedSize }))
+	}
+
+	const handleClickFavoriteItem = (productSize: allProducts) => {
+		const selectedSize = sizeName
+		if (!selectedSize) {
+			toast.info(`You need add size`, {
+				position: 'bottom-left',
+			})
+			return
+		}
+
+		console.log('favorite added')
+
+		dispatch(addToFavorites({ ...productSize, size: selectedSize }))
 	}
 
 	return (
@@ -145,7 +153,6 @@ const ModalWindows = () => {
 										value={sizeName}
 										label='Size'
 										onChange={handleChange}
-										// onClick={() => handleClickAddItem(allPr)}
 									>
 										{size.map(size => (
 											<MenuItem key={size} value={size}>
@@ -175,7 +182,11 @@ const ModalWindows = () => {
 								<span className='add_icon'> &#10003; </span>
 								<span className='textAdd'>Buy</span>
 							</button>
-							<button className='btn_focus heart'>
+							<button
+								className='btn_focus heart'
+								onClick={() => handleClickFavoriteItem(product)}
+								onChange={() => handleChange}
+							>
 								<span className='textHeart'>Favourite</span>
 								<span className='heart_icon'> &#9829; </span>
 							</button>

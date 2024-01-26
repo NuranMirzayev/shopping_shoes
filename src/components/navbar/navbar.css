@@ -29,14 +29,13 @@ b {
 	font-weight: 500;
 	list-style: none;
 	text-decoration: none;
-	font-size: 14px;
 	transition: font-size 500ms;
 	color: black;
 }
 
 .navList:hover {
 	color: #cd3333;
-	font-size: 22px;
+	font-size: 1.1rem;
 }
 
 .navIcons {
@@ -108,8 +107,7 @@ b {
 	background-color: aliceblue;
 	height: 40px;
 	cursor: pointer;
-	margin-left: 40px;
-	/* position: relative; */
+	margin-top: 4px;
 }
 
 .navSearchIcon {
@@ -121,32 +119,13 @@ b {
 .navSearchInput {
 	border: none;
 	outline: none;
-
+	/* font-size: 16px; */
 	/* background-color: transparent - etim method mi udalayem zadni color */
 
 	background-color: transparent;
 }
 
 /* Filter */
-
-/* .fillter {
-  display: flex; 
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-}
-
-.div_fillter {
-  width: 25%;
-  padding: 10px;
-  box-sizing: border-box; 
-}
-
-.fillter_photo {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}*/
 
 .fillter_photo_name {
 	display: block;
@@ -155,23 +134,12 @@ b {
 	width: 40%;
 }
 
-/* @media (max-width: 768px) {
-	.div_fillter {
-		width: 50%;
-	}
-}
-
-@media (max-width: 480px) {
-	.div_fillter {
-		width: 100%;
-	}
-} */
 .fillter {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	top: 64px;
-	left: 0;
+	right: 0;
 	background-color: white;
 	width: 30%;
 	z-index: 1;

@@ -7,10 +7,7 @@ export const navItems: Array<Item> = [
 		title: 'Home',
 		route: 'home',
 	},
-	{
-		title: 'Men',
-		route: 'men',
-	},
+
 	{
 		title: 'Women',
 		route: 'women',
@@ -18,6 +15,10 @@ export const navItems: Array<Item> = [
 	{
 		title: 'Kids',
 		route: 'kids',
+	},
+	{
+		title: 'Men',
+		route: 'men',
 	},
 	{
 		title: 'Sale',
@@ -74,7 +75,7 @@ export const AllProducts: Array<allProducts> = [
 		threeImg: 'threeImg_1',
 		category: 'lifeStyle',
 		gender: "Men's",
-		isLike: false,
+
 		size: '',
 		id: 1,
 	},
@@ -90,7 +91,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'sales',
 		gender: "Men's" || 'Sales',
 		sale: 599.9,
-		isLike: false,
+
 		size: '',
 		id: 2,
 	},
@@ -106,7 +107,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'walking',
 		gender: "Men's",
 		size: '',
-		isLike: false,
+
 		id: 3,
 		newArrivals: 'new',
 	},
@@ -120,7 +121,7 @@ export const AllProducts: Array<allProducts> = [
 		secondImg: 'secondImg_4',
 		threeImg: 'threeImg_4',
 		category: 'football',
-		isLike: false,
+
 		size: '',
 		gender: "Men's",
 		id: 4,
@@ -137,7 +138,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'running',
 		gender: "Men's",
 		size: '',
-		isLike: false,
+
 		id: 5,
 	},
 	{
@@ -152,7 +153,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'basketball',
 		gender: "Men's",
 		size: '',
-		isLike: false,
+
 		id: 6,
 	},
 	{
@@ -167,7 +168,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'basketball',
 		gender: "Men's",
 		size: '',
-		isLike: false,
+
 		id: 7,
 		newArrivals: 'new',
 	},
@@ -183,7 +184,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Men's",
 		size: '',
-		isLike: false,
+
 		id: 8,
 	},
 	{
@@ -197,7 +198,7 @@ export const AllProducts: Array<allProducts> = [
 		threeImg: 'threeImg_9',
 		category: 'lifeStyle',
 		gender: "Men's",
-		isLike: false,
+
 		size: '',
 		id: 9,
 		newArrivals: 'new',
@@ -214,7 +215,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Women's",
 		size: '',
-		isLike: false,
+
 		id: 11,
 	},
 	{
@@ -229,7 +230,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'walking',
 		gender: "Women's",
 		size: '',
-		isLike: false,
+
 		id: 13,
 	},
 	{
@@ -245,7 +246,7 @@ export const AllProducts: Array<allProducts> = [
 		gender: "Women's" || 'Sales',
 		sale: 509.9,
 		size: '',
-		isLike: false,
+
 		id: 12,
 	},
 	{
@@ -258,7 +259,7 @@ export const AllProducts: Array<allProducts> = [
 		secondImg: 'secondImg_14',
 		threeImg: 'threeImg_14',
 		category: 'football',
-		isLike: false,
+
 		size: '',
 		gender: "Women's",
 		id: 14,
@@ -276,7 +277,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'running',
 		size: '',
 		gender: "Women's",
-		isLike: false,
+
 		id: 15,
 	},
 	{
@@ -291,7 +292,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'basketball',
 		size: '',
 		gender: "Women's",
-		isLike: false,
+
 		id: 16,
 	},
 	{
@@ -306,7 +307,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'basketball',
 		gender: "Women's",
 		size: '',
-		isLike: false,
+
 		id: 17,
 		newArrivals: 'new',
 	},
@@ -322,7 +323,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Women's",
 		size: '',
-		isLike: false,
+
 		id: 18,
 		newArrivals: 'new',
 	},
@@ -338,7 +339,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Women's",
 		size: '',
-		isLike: false,
+
 		id: 19,
 	},
 	{
@@ -353,7 +354,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Kids'",
 		size: '',
-		isLike: false,
+
 		id: 21,
 	},
 	{
@@ -367,7 +368,7 @@ export const AllProducts: Array<allProducts> = [
 		threeImg: 'threeImg_23',
 		category: 'basketball',
 		gender: "Kids'",
-		isLike: false,
+
 		id: 23,
 		size: '',
 		newArrivals: 'new',
@@ -385,7 +386,7 @@ export const AllProducts: Array<allProducts> = [
 		gender: "Kids'" || 'Sales',
 		sale: 409.9,
 		size: '',
-		isLike: false,
+
 		id: 22,
 	},
 	{
@@ -398,7 +399,7 @@ export const AllProducts: Array<allProducts> = [
 		secondImg: 'secondImg_24',
 		threeImg: 'threeImg_24',
 		category: 'football',
-		isLike: false,
+
 		size: '',
 		gender: "Kids'",
 		id: 24,
@@ -415,7 +416,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'running',
 		gender: "Kids'",
 		size: '',
-		isLike: false,
+
 		id: 25,
 	},
 	{
@@ -430,7 +431,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'basketball',
 		gender: "Kids'",
 		size: '',
-		isLike: false,
+
 		id: 26,
 		newArrivals: 'new',
 	},
@@ -446,7 +447,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'basketball',
 		gender: "Kids'",
 		size: '',
-		isLike: false,
+
 		id: 27,
 	},
 	{
@@ -461,7 +462,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Kids'",
 		// size: "",
-		isLike: false,
+
 		id: 28,
 		newArrivals: 'new',
 	},
@@ -477,7 +478,7 @@ export const AllProducts: Array<allProducts> = [
 		category: 'lifeStyle',
 		gender: "Kids'",
 		sizeMain: [],
-		isLike: false,
+
 		id: 29,
 	},
 ]

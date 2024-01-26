@@ -30,12 +30,12 @@ export interface allProducts {
 	category?: string
 	gender?: string
 	sale?: number
-	isLike: boolean
 	id: number | string
 	newArrivals?: string
 	sizeMain?: []
 	cartQuantity?: number | any
 	size?: string
+	likeQuantity?: number | any
 }
 
 export interface SelectedFilterType {

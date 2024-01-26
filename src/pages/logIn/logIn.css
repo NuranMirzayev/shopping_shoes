@@ -1,6 +1,6 @@
 .logIn {
-	max-height: 920px;
-	margin: 120px 0;
+	height: 100svh;
+	/* margin: 120px 0; */
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -7,15 +7,13 @@ import IconButton from '@mui/material/IconButton'
 import Stack from '@mui/material/Stack'
 import { red } from '@mui/material/colors'
 import { createTheme } from '@mui/material/styles'
-import { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import NoAuth from '../../pages/profile/NoAuth'
 import { navItems } from '../../utils/constants'
-import SideModals from '../Side_Modal/SideModals'
 import Navitem from './Navitem'
 
 import { useAuth } from '../../app/useAuth'
-import { getAllTotal } from '../../features/ShoppingCart/CartSlice'
 import Profile from '../../pages/profile/Profile'
 import {
 	ModalWindowsContext,
@@ -55,9 +53,9 @@ const NavBar = ({ filterAll }: Props) => {
 
 	const [searchTerm, setSearchTerm] = useState<string>('')
 	const [searchResults, setSearchResults] = useState<allProducts[]>([])
-	useEffect(() => {
-		dispatch(getAllTotal())
-	}, [cart, dispatch])
+	// useEffect(() => {
+	// 	dispatch(getAllTotal())
+	// }, [cart, dispatch])
 
 	const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value
@@ -157,9 +155,9 @@ const NavBar = ({ filterAll }: Props) => {
 					</Badge>
 				</IconButton>
 
-				{cartOpen ? (
+				{/* {cartOpen ? (
 					<SideModals setCartOpen={setCartOpen} cartOpen={cartOpen} />
-				) : null}
+				) : null} */}
 
 				{isAuth ? <Profile /> : <NoAuth />}
 			</div>

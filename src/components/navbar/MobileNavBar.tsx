@@ -1,8 +1,6 @@
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import MenuIcon from '@mui/icons-material/Menu'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import SearchIcon from '@mui/icons-material/Search'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import AppBar from '@mui/material/AppBar'
 import Badge from '@mui/material/Badge'
 import Box from '@mui/material/Box'
@@ -17,15 +15,34 @@ import {
 	Product,
 } from '../../provides/ModalWindowsContext'
 
+import { Stack, ThemeProvider, createTheme } from '@mui/material'
+import { red } from '@mui/material/colors'
 import { ChangeEvent, MouseEvent, useContext, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { useAuth } from '../../app/useAuth'
+import { getAllTotalFavorite } from '../../features/FavoritesCart/FavoriteSlice'
 import { getAllTotal } from '../../features/ShoppingCart/CartSlice'
 import Profile from '../../pages/profile/Profile'
+import { navItems } from '../../utils/constants'
 import { allProducts } from '../../utils/types'
-import SideModals from '../Side_Modal/SideModals'
+import DrawerS from '../Side_Modal/Drawer'
+import DrawersFavorite from '../Side_Modal/DrawersFavorite'
 import ModalWindows from '../modal_windows/ModalWindows'
+import Navitem from './Navitem'
 import './navbar.css'
+
+const theme = createTheme({
+	palette: {
+		primary: {
+			// Purple and green play nicely together.
+			main: red['500'],
+		},
+		secondary: {
+			// This is green.A700 as hex.
+			main: red['A700'],
+		},
+	},
+})
 
 interface Props {
 	filterAll: allProducts[]
@@ -37,13 +54,15 @@ const MobileNavBar = ({ filterAll }: Props) => {
 		useState<null | HTMLElement>(null)
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
 
-	const [cartOpen, setCartOpen] = useState(false)
+	// const [cartOpen, setCartOpen] = useState(false)
+	// const [open, setOpen] = useState(false)
 
-	const { cartTotalQuantity } = useAppSelector(state => state.cart)
+	// const { cartTotalQuantity } = useAppSelector(state => state.cart)
 	const { isAuth } = useAuth()
 
 	const dispatch = useAppDispatch()
 	const cart = useAppSelector(state => state.cart)
+	const favorite = useAppSelector(state => state.favorite)
 
 	const isMenuOpen = Boolean(anchorEl)
 	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -80,9 +99,14 @@ const MobileNavBar = ({ filterAll }: Props) => {
 	const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
 		setMobileMoreAnchorEl(event.currentTarget)
 	}
+
 	useEffect(() => {
 		dispatch(getAllTotal())
 	}, [cart, dispatch])
+
+	useEffect(() => {
+		dispatch(getAllTotalFavorite())
+	}, [favorite, dispatch])
 
 	const menuId = 'primary-search-account-menu'
 	const renderMenu = (
@@ -132,7 +156,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				<p>Favorite</p>
 			</MenuItem>
 			<MenuItem>
-				<IconButton
+				{/* <IconButton
 					size='large'
 					aria-label='show 17 new notifications'
 					color='inherit'
@@ -145,7 +169,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				</IconButton>
 				{cartOpen ? (
 					<SideModals setCartOpen={setCartOpen} cartOpen={cartOpen} />
-				) : null}
+				) : null} */}
 				<p>Cart Box</p>
 			</MenuItem>
 			<MenuItem onClick={handleProfileMenuOpen}>
@@ -165,7 +189,8 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				position='fixed'
 			>
 				<Toolbar>
-					<IconButton
+					{/* TODO: Burger Bar */}
+					{/* <IconButton
 						size='large'
 						edge='start'
 						color='inherit'
@@ -173,74 +198,89 @@ const MobileNavBar = ({ filterAll }: Props) => {
 						sx={{ mr: 2 }}
 					>
 						<MenuIcon />
-					</IconButton>
+					</IconButton> */}
 					<Typography
 						variant='h6'
 						noWrap
 						component='div'
-						sx={{ display: { xs: 'none', sm: 'block' }, height: '60px' }}
+						sx={{
+							display: { xs: 'none', sm: 'block' },
+							height: '60px',
+							maxWidth: '40svh',
+						}}
 					>
 						<div className='logo'>
 							<img className='logoImg' src='./assets/Logo.png' alt='navLogo' />
 							<b>Space Shoes</b>
 						</div>
 					</Typography>
-
-					<div className='navSearch'>
-						<IconButton color='default' className='navSearchIcon'>
-							<SearchIcon />
-						</IconButton>
-						<input
-							type='search'
-							placeholder='Search'
-							className='navSearchInput'
-							value={searchTerm}
-							onChange={handleSearch}
-						/>
-					</div>
-					{!isOpen ? (
-						<ul className='fillter'>
-							{!searchTerm
-								? searchTerm
-								: searchResults.map(product => (
-										<li
-											className='div_fillter'
-											onClick={() => handleClick(product)}
-											key={product.name}
-										>
-											<div className='link_fillter'>
-												<img
-													className='fillter_photo'
-													src={`./assets/AllProductsImg/${product.mainImg}.png`}
-													alt={product.name}
-												/>
-												<span className='fillter_photo_name'>
-													{product.name}
-												</span>
-												{product.sale ? (
-													<p className='price_p_filter'>
-														{`₪${product!.price.toFixed(2)}`}
-														<span>
-															<del className='red'>{`₪${product.sale.toFixed(
-																2
-															)}`}</del>
-														</span>
-													</p>
-												) : (
-													<p className='price_p_filter'>{`₪${product.price.toFixed(
-														2
-													)}`}</p>
-												)}
-											</div>
-										</li>
-								  ))}
-						</ul>
-					) : (
-						<ModalWindows />
-					)}
-					<Box sx={{ flexGrow: 1 }} />
+					<Stack
+						spacing={4}
+						direction='row'
+						className='navLists'
+						aria-label='text button group'
+						sx={{ flex: 1, justifyContent: 'center', maxWidth: '90%' }}
+					>
+						<ThemeProvider theme={theme}>
+							{navItems.map(item => (
+								<Navitem key={item.route} item={item} />
+							))}
+						</ThemeProvider>
+					</Stack>
 					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-						<IconButton
+						<div className='navSearch'>
+							<IconButton color='default' className='navSearchIcon'>
+								<SearchIcon />
+							</IconButton>
+							<input
+								type='search'
+								placeholder='Search'
+								className='navSearchInput'
+								value={searchTerm}
+								onChange={handleSearch}
+							/>
+						</div>
+						{!isOpen ? (
+							<ul className='fillter'>
+								{!searchTerm
+									? searchTerm
+									: searchResults.map(product => (
+											<li
+												className='div_fillter'
+												onClick={() => handleClick(product)}
+												key={product.name}
+											>
+												<div className='link_fillter'>
+													<img
+														className='fillter_photo'
+														src={`./assets/AllProductsImg/${product.mainImg}.png`}
+														alt={product.name}
+													/>
+													<span className='fillter_photo_name'>
+														{product.name}
+													</span>
+													{product.sale ? (
+														<p className='price_p_filter'>
+															{`₪${product!.price.toFixed(2)}`}
+															<span>
+																<del className='red'>{`₪${product.sale.toFixed(
+																	2
+																)}`}</del>
+															</span>
+														</p>
+													) : (
+														<p className='price_p_filter'>{`₪${product.price.toFixed(
+															2
+														)}`}</p>
+													)}
+												</div>
+											</li>
+									  ))}
+							</ul>
+						) : (
+							<ModalWindows />
+						)}
+						{/* <IconButton
 							size='large'
 							aria-label='show 4 new mails'
 							color='inherit'
@@ -248,22 +288,9 @@ const MobileNavBar = ({ filterAll }: Props) => {
 							<Badge badgeContent={4} color='error'>
 								<FavoriteBorderIcon />
 							</Badge>
-						</IconButton>
-						<IconButton
-							size='large'
-							aria-label='show 17 new notifications'
-							color='inherit'
-							className={`cartIcon ${cartOpen ? 'active' : ''}`}
-							onClick={() => setCartOpen(!cartOpen)}
-						>
-							<Badge badgeContent={cartTotalQuantity} color='error'>
-								<ShoppingCartOutlinedIcon color='inherit' />
-							</Badge>
-						</IconButton>
-						{cartOpen ? (
-							<SideModals setCartOpen={setCartOpen} cartOpen={cartOpen} />
-						) : null}
-
+						</IconButton> */}
+						<DrawersFavorite />
+						<DrawerS />
 						{isAuth ? <Profile /> : <NoAuth />}
 					</Box>
 					<Box sx={{ display: { xs: 'flex', md: 'none' } }}>

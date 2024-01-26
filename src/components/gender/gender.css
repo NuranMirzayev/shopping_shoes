@@ -1,12 +1,15 @@
 .gender {
-	height: 550px;
+	min-height: 65svh;
 	padding: 0 8%;
 }
 
 .main {
 	display: flex;
 	justify-content: space-between;
+	align-self: center;
 	gap: 60px;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .box {
@@ -16,21 +19,22 @@
 
 	width: 100%;
 	text-align: center;
-	transition: width 500ms;
 	cursor: pointer;
 	height: 440px;
 	border-radius: 10px;
 	color: white;
-	font-size: 30px;
+	font-size: 32px;
 	font-weight: 700;
-	transition: width 500ms, font-size 500ms;
+	transition: transform 500ms, font-size 500ms;
 	box-shadow: 3px 7px 10px rgb(104, 102, 102);
 	text-decoration: none;
+	margin-bottom: 20px;
+	/* border-radius: 50%; */
 }
 
 .box:hover {
-	width: 120%;
-	font-size: 48px;
+	transform: scale(1.1);
+	font-size: 2.2rem;
 }
 
 .main_left {
@@ -43,12 +47,26 @@
 	background-image: url(../../../public/assets/img_gender/kids.png);
 	background-position: center;
 	background-size: cover;
-	/* margin-left: 40px; */
 }
 
 .main_right {
 	background-image: url(../../../public/assets/img_gender/woman.png);
 	background-position: center;
 	background-size: cover;
-	/* margin-left: 40px; */
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+	/* styles for devices with a minimum screen width of 480px */
+	.main {
+		display: flex;
+		/* flex-wrap: wrap; */
+		flex-direction: column;
+	}
+	.box {
+		min-height: 180px;
+	}
+
+	.main_left {
+		margin-bottom: 40px;
+	}
 }

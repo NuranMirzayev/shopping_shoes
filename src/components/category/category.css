@@ -1,37 +1,38 @@
 .category {
-    height: 675px;
-    padding: 0 8%;
+	height: 60svh;
+	padding: 0 8%;
 }
 
 .category_h1 {
-    margin-top: 40px;
-    width: 156px;
-    cursor: pointer;
-    background-image:
-        linear-gradient(to bottom,
-            transparent 0%,
-            transparent 90%,
-            #FFCC67 90%,
-            #FFCC67 100%);
+	margin-top: 40px;
+	width: 156px;
+	cursor: pointer;
+	background-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		transparent 90%,
+		#ffcc67 90%,
+		#ffcc67 100%
+	);
 
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
-    background-position-x: right;
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	background-position-x: right;
 
-    transition: background-size 500ms;
+	transition: background-size 500ms;
 }
 
 .category_h1:hover {
-    background-size: 100% 100%;
-    background-position-x: left;
+	background-size: 100% 100%;
+	background-position-x: left;
 }
 
 .category_box {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-basis: 250px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-basis: 250px;
 }
 
 .box_lifeStyle,
@@ -40,56 +41,56 @@
 .box_running,
 .box_walking,
 .box_sale {
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
-    /* margin-right: 15px; */
+	height: 220px;
+	width: 220px;
+	border-radius: 50%;
+	/* margin-right: 15px; */
 }
 
 .category_img {
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
-    transform: rotate(-30deg);
-    margin-top: 100px;
+	height: 220px;
+	width: 220px;
+	border-radius: 50%;
+	transform: rotate(-30deg);
+	margin-top: 100px;
 
-    /* border: 2px solid ; */
+	/* border: 2px solid ; */
 
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: transform 1s;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	transition: transform 1s;
 }
 
 .category_img_sale {
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
-    margin-top: 110px;
+	height: 220px;
+	width: 220px;
+	border-radius: 50%;
+	margin-top: 110px;
 
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 .category_img:hover {
-    transform: none;
+	transform: none;
 }
 
 .box_sale {
-    transform: none;
+	transform: none;
 }
 
 .p_category {
-    transform: scale(0.4);
-    opacity: 0;
-    transition: transform 1s, opacity 1s, font-size 1s;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    /* padding-top: 15px; */
+	transform: scale(0.4);
+	opacity: 0;
+	transition: transform 1s, opacity 1s, font-size 1s;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	/* padding-top: 15px; */
 }
 
 .box_lifeStyle:hover .p_category,
@@ -98,7 +99,7 @@
 .box_running:hover .p_category,
 .box_walking:hover .p_category,
 .box_sale:hover .p_category {
-    transform: none;
-    opacity: 1;
-    font-size: 28px;
+	transform: none;
+	opacity: 1;
+	font-size: 28px;
 }

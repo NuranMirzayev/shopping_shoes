@@ -1,6 +1,6 @@
 .right {
-	height: 850px;
-	width: 50%;
+	height: 800px;
+	min-width: 50%;
 	padding: 0 8%;
 	overflow-x: hidden;
 }
@@ -9,7 +9,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 40px;
+	margin-top: 50px;
 	position: relative;
 }
 

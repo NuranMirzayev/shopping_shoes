@@ -1,8 +1,9 @@
-import FavoriteIcon from '@mui/icons-material/Favorite'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
-import { Button, IconButton, Tooltip } from '@mui/material'
+import { Button, Tooltip } from '@mui/material'
 import { useContext, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addToFavorites } from '../../features/FavoritesCart/FavoriteSlice'
 import {
 	ModalWindowsContext,
 	Product,
@@ -10,14 +11,22 @@ import {
 import ModalWindows from '../modal_windows/ModalWindows'
 import './Product.css'
 
+// FIXME: Nado ispravit btn posle najat i obnavlenie ne iscezala i pri otklucenie serdecki ctob umenwilsa i v favoriteDrawers
+
 interface AllProductProps {
 	products: Product
 }
 
 const AllProduct = ({ products }: AllProductProps) => {
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
+	const dispatch = useDispatch()
 
-	const [heart, setHeart] = useState(products.isLike)
+	const [heart, setHeart] = useState(false)
+
+	const handleClickLike = () => {
+		setHeart(!heart)
+		dispatch(addToFavorites(products))
+	}
 
 	return (
 		<div className='Product'>
@@ -38,14 +47,14 @@ const AllProduct = ({ products }: AllProductProps) => {
 						<p className='price_p'>{`₪${products.price.toFixed(2)}`}</p>
 					)}
 					<div className='test'>
-						<Tooltip title='Favorite' arrow>
+						{/* <Tooltip title='Favorite' arrow>
 							<IconButton
 								className={`heart_btn ${heart && 'active'}`}
-								onClick={() => setHeart(!heart)}
+								onClick={handleClickLike}
 							>
 								<FavoriteIcon sx={{ fontSize: 50 }} />
 							</IconButton>
-						</Tooltip>
+						</Tooltip> */}
 						<Link
 							to={`#/${products.name}/${products.id}`}
 							className='product_windows'
