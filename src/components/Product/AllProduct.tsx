@@ -1,9 +1,7 @@
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import { Button, Tooltip } from '@mui/material'
-import { useContext, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { addToFavorites } from '../../features/FavoritesCart/FavoriteSlice'
 import {
 	ModalWindowsContext,
 	Product,
@@ -19,14 +17,14 @@ interface AllProductProps {
 
 const AllProduct = ({ products }: AllProductProps) => {
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
-	const dispatch = useDispatch()
+	// const dispatch = useDispatch()
 
-	const [heart, setHeart] = useState(false)
+	// const [heart, setHeart] = useState(false)
 
-	const handleClickLike = () => {
-		setHeart(!heart)
-		dispatch(addToFavorites(products))
-	}
+	// const handleClickLike = () => {
+	// 	setHeart(!heart)
+	// 	dispatch(addToFavorites(products))
+	// }
 
 	return (
 		<div className='Product'>
