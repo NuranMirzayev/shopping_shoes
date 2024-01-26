@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack'
 import { red } from '@mui/material/colors'
 import { createTheme } from '@mui/material/styles'
 import { ChangeEvent, useContext, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { useAppSelector } from '../../app/hooks'
 import NoAuth from '../../pages/profile/NoAuth'
 import { navItems } from '../../utils/constants'
 import Navitem from './Navitem'
@@ -48,8 +48,8 @@ const NavBar = ({ filterAll }: Props) => {
 	const { cartTotalQuantity } = useAppSelector(state => state.cart)
 	const { isAuth } = useAuth()
 
-	const dispatch = useAppDispatch()
-	const cart = useAppSelector(state => state.cart)
+	// const dispatch = useAppDispatch()
+	// const cart = useAppSelector(state => state.cart)
 
 	const [searchTerm, setSearchTerm] = useState<string>('')
 	const [searchResults, setSearchResults] = useState<allProducts[]>([])
