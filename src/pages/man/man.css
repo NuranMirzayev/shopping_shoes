@@ -1,13 +1,14 @@
 .manProducts {
 	padding: 0 8%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-row-gap: 80px;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 5rem;
 	justify-items: center;
 	transition: none;
 	text-decoration: none;
 	list-style: none;
 	margin-bottom: 160px;
+	min-height: 55svh;
 }
 
 .man {

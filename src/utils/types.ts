@@ -2,7 +2,6 @@ export interface Item {
 	title: string
 	route: string
 }
-
 export interface ImgUrl {
 	imgUrl: string
 }

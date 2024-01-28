@@ -8,23 +8,12 @@ import {
 } from '../../provides/ModalWindowsContext'
 import ModalWindows from '../modal_windows/ModalWindows'
 import './Product.css'
-
-// FIXME: Nado ispravit btn posle najat i obnavlenie ne iscezala i pri otklucenie serdecki ctob umenwilsa i v favoriteDrawers
-
 interface AllProductProps {
 	products: Product
 }
 
 const AllProduct = ({ products }: AllProductProps) => {
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
-	// const dispatch = useDispatch()
-
-	// const [heart, setHeart] = useState(false)
-
-	// const handleClickLike = () => {
-	// 	setHeart(!heart)
-	// 	dispatch(addToFavorites(products))
-	// }
 
 	return (
 		<div className='Product'>
@@ -45,14 +34,6 @@ const AllProduct = ({ products }: AllProductProps) => {
 						<p className='price_p'>{`₪${products.price.toFixed(2)}`}</p>
 					)}
 					<div className='test'>
-						{/* <Tooltip title='Favorite' arrow>
-							<IconButton
-								className={`heart_btn ${heart && 'active'}`}
-								onClick={handleClickLike}
-							>
-								<FavoriteIcon sx={{ fontSize: 50 }} />
-							</IconButton>
-						</Tooltip> */}
 						<Link
 							to={`#/${products.name}/${products.id}`}
 							className='product_windows'

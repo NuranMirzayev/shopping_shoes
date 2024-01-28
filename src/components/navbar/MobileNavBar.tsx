@@ -1,28 +1,22 @@
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import MenuIcon from '@mui/icons-material/Menu'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import SearchIcon from '@mui/icons-material/Search'
+import { Stack, ThemeProvider, Tooltip, createTheme } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
-import Badge from '@mui/material/Badge'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import NoAuth from '../../pages/profile/NoAuth'
-import {
-	ModalWindowsContext,
-	Product,
-} from '../../provides/ModalWindowsContext'
-
-import { Stack, ThemeProvider, createTheme } from '@mui/material'
 import { red } from '@mui/material/colors'
-import { ChangeEvent, MouseEvent, useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { useAuth } from '../../app/useAuth'
 import { getAllTotalFavorite } from '../../features/FavoritesCart/FavoriteSlice'
 import { getAllTotal } from '../../features/ShoppingCart/CartSlice'
+import NoAuth from '../../pages/profile/NoAuth'
 import Profile from '../../pages/profile/Profile'
+import { ModalWindowsContext } from '../../provides/ModalWindowsContext'
 import { navItems } from '../../utils/constants'
 import { allProducts } from '../../utils/types'
 import DrawerS from '../Side_Modal/Drawer'
@@ -34,11 +28,9 @@ import './navbar.css'
 const theme = createTheme({
 	palette: {
 		primary: {
-			// Purple and green play nicely together.
 			main: red['500'],
 		},
 		secondary: {
-			// This is green.A700 as hex.
 			main: red['A700'],
 		},
 	},
@@ -54,21 +46,16 @@ const MobileNavBar = ({ filterAll }: Props) => {
 		useState<null | HTMLElement>(null)
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
 
-	// const [cartOpen, setCartOpen] = useState(false)
-	// const [open, setOpen] = useState(false)
-
-	// const { cartTotalQuantity } = useAppSelector(state => state.cart)
 	const { isAuth } = useAuth()
 
 	const dispatch = useAppDispatch()
+
 	const cart = useAppSelector(state => state.cart)
 	const favorite = useAppSelector(state => state.favorite)
 
-	const isMenuOpen = Boolean(anchorEl)
-	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
-
 	const [searchTerm, setSearchTerm] = useState<string>('')
 	const [searchResults, setSearchResults] = useState<allProducts[]>([])
+
 	const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value
 		setSearchTerm(value)
@@ -79,12 +66,8 @@ const MobileNavBar = ({ filterAll }: Props) => {
 		setSearchResults(results)
 	}
 
-	const handleClick = (product: Product) => {
+	const handleClick = (product: allProducts) => {
 		openModal(product)
-	}
-
-	const handleProfileMenuOpen = (event: MouseEvent<HTMLElement>) => {
-		setAnchorEl(event.currentTarget)
 	}
 
 	const handleMobileMenuClose = () => {
@@ -122,12 +105,9 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				vertical: 'top',
 				horizontal: 'right',
 			}}
-			open={isMenuOpen}
+			open={Boolean(anchorEl)}
 			onClose={handleMenuClose}
-		>
-			<MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-			<MenuItem onClick={handleMenuClose}>My account</MenuItem>
-		</Menu>
+		></Menu>
 	)
 
 	const mobileMenuId = 'primary-search-account-menu-mobile'
@@ -141,41 +121,34 @@ const MobileNavBar = ({ filterAll }: Props) => {
 			id={mobileMenuId}
 			keepMounted
 			transformOrigin={{
-				vertical: 'bottom',
+				vertical: 'top',
 				horizontal: 'right',
 			}}
-			open={isMobileMenuOpen}
+			sx={{ marginTop: '8px', marginLeft: '60px' }}
+			open={Boolean(mobileMoreAnchorEl)}
 			onClose={handleMobileMenuClose}
 		>
-			<MenuItem>
-				<IconButton size='large' aria-label='show 4 new mails' color='inherit'>
-					<Badge badgeContent={2} color='error'>
-						<FavoriteBorderIcon />
-					</Badge>
+			<Tooltip
+				title='Favorite'
+				sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+			>
+				<IconButton color='inherit'>
+					<DrawersFavorite />
 				</IconButton>
-				<p>Favorite</p>
-			</MenuItem>
-			<MenuItem>
-				{/* <IconButton
-					size='large'
-					aria-label='show 17 new notifications'
-					color='inherit'
-					className={`cartIcon ${cartOpen ? 'active' : ''}`}
-					onClick={() => setCartOpen(!cartOpen)}
-				>
-					<Badge badgeContent={cartTotalQuantity} color='error'>
-						<ShoppingCartOutlinedIcon color='inherit' />
-					</Badge>
+			</Tooltip>
+			<Tooltip
+				title='Cart Box'
+				sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+			>
+				<IconButton color='inherit'>
+					<DrawerS />
 				</IconButton>
-				{cartOpen ? (
-					<SideModals setCartOpen={setCartOpen} cartOpen={cartOpen} />
-				) : null} */}
-				<p>Cart Box</p>
-			</MenuItem>
-			<MenuItem onClick={handleProfileMenuOpen}>
-				{isAuth ? <Profile /> : <NoAuth />}
-				<p>Profile</p>
-			</MenuItem>
+			</Tooltip>
+			<Tooltip title='Profile'>
+				<IconButton color='inherit'>
+					{isAuth ? <Profile /> : <NoAuth />}
+				</IconButton>
+			</Tooltip>
 		</Menu>
 	)
 
@@ -187,33 +160,42 @@ const MobileNavBar = ({ filterAll }: Props) => {
 					color: 'black',
 				}}
 				position='fixed'
+				className='navbar'
 			>
 				<Toolbar>
-					{/* TODO: Burger Bar */}
-					{/* <IconButton
+					<IconButton
 						size='large'
 						edge='start'
 						color='inherit'
 						aria-label='open drawer'
-						sx={{ mr: 2 }}
+						sx={{ mr: 2, display: { xs: 'flex', md: 'none' } }}
 					>
 						<MenuIcon />
-					</IconButton> */}
-					<Typography
-						variant='h6'
-						noWrap
-						component='div'
-						sx={{
-							display: { xs: 'none', sm: 'block' },
-							height: '60px',
-							maxWidth: '40svh',
-						}}
-					>
-						<div className='logo'>
+					</IconButton>
+
+					<Stack spacing={1} direction='row' className='logo'>
+						<Typography
+							className='logoTypography'
+							variant='h6'
+							alignItems='center'
+							noWrap
+							component='div'
+							sx={{
+								display: {
+									xs: 'none',
+									sm: 'flex',
+									md: 'flex',
+								},
+								height: '60px',
+								maxWidth: '40svw',
+								justifyContent: 'center',
+								alignItems: 'center',
+							}}
+						>
 							<img className='logoImg' src='./assets/Logo.png' alt='navLogo' />
 							<b>Space Shoes</b>
-						</div>
-					</Typography>
+						</Typography>
+					</Stack>
 					<Stack
 						spacing={4}
 						direction='row'
@@ -280,15 +262,6 @@ const MobileNavBar = ({ filterAll }: Props) => {
 						) : (
 							<ModalWindows />
 						)}
-						{/* <IconButton
-							size='large'
-							aria-label='show 4 new mails'
-							color='inherit'
-						>
-							<Badge badgeContent={4} color='error'>
-								<FavoriteBorderIcon />
-							</Badge>
-						</IconButton> */}
 						<DrawersFavorite />
 						<DrawerS />
 						{isAuth ? <Profile /> : <NoAuth />}

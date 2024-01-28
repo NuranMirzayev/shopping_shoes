@@ -2,6 +2,9 @@ import { Img, ImgUrl, Item, SelectedFilterType, allProducts } from './types'
 
 export const base_url = 'https://63e7a708ac3920ad5be16a86.mockapi.io/api/v1'
 
+export const itemsPerPageDesktop = 6
+export const itemsPerPageMobile = 3
+
 export const navItems: Array<Item> = [
 	{
 		title: 'Home',

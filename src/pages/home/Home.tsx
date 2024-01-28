@@ -17,7 +17,7 @@ const Home = () => {
 				sx={{
 					display: {
 						xs: 'columns',
-						md: { flexDirection: 'column' },
+						// md: { flexDirection: 'column' },
 					},
 				}}
 				className='wrapper'

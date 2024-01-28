@@ -5,7 +5,7 @@ import { Avatar, IconButton, Menu, MenuItem } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../app/useAuth'
 
-const TestWelcome = () => {
+const NoAuth = () => {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 	const { isAuth } = useAuth()
 
@@ -82,4 +82,4 @@ const TestWelcome = () => {
 	)
 }
 
-export default TestWelcome
+export default NoAuth
