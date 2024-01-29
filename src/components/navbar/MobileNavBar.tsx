@@ -266,7 +266,8 @@ const MobileNavBar = ({ filterAll }: Props) => {
 						<DrawerS />
 						{isAuth ? <Profile /> : <NoAuth />}
 					</Box>
-					<Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+					{/* TODO: 3 tocki (favorite,cart, profil) */}
+					<Box sx={{ display: { xs: 'block', md: 'none' } }}>
 						<IconButton
 							size='large'
 							aria-label='show more'

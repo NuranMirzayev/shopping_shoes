@@ -13,15 +13,7 @@ import './home.css'
 const Home = () => {
 	return (
 		<div className='home'>
-			<Box
-				sx={{
-					display: {
-						xs: 'columns',
-						// md: { flexDirection: 'column' },
-					},
-				}}
-				className='wrapper'
-			>
+			<Box className='wrapper'>
 				<Left />
 				<Right />
 			</Box>
