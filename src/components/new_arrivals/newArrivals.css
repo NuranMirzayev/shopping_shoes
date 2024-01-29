@@ -50,7 +50,7 @@
 	background-position-x: left;
 }
 
-@media only screen and (min-width: 280px) {
+@media only screen and (min-width: 280px) and (max-width: 480px) {
 	.newArrivals {
 		height: 200svh;
 	}
