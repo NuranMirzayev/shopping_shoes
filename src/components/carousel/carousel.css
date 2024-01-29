@@ -31,7 +31,7 @@
 	animation: carousel_img 4s ease-in infinite;
 }
 
-@media only screen and (min-width: 280px) {
+@media only screen and (min-width: 280px) and (max-width: 920px) {
 	.carousel {
 		height: 20svh;
 		margin-top: 20px;
