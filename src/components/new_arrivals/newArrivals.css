@@ -54,4 +54,22 @@
 	.newArrivals {
 		height: 200svh;
 	}
+
+	.newArrivalsProducts {
+		width: 100%;
+
+		height: 300svh;
+
+		padding: 0 8%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+		grid-gap: 2rem;
+		justify-items: center;
+		align-items: center;
+
+		transition: none;
+		text-decoration: none;
+		list-style: none;
+		margin-bottom: 160px;
+	}
 }
