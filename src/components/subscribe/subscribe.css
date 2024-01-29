@@ -65,3 +65,24 @@
 .right_sub_input:focus-visible {
 	outline: none;
 }
+
+@media only screen and (min-width: 280px) and (max-width: 768px) {
+	.h1_right_sub {
+		font-size: 2rem;
+	}
+
+	.left_sub {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: #ffcc67;
+	}
+
+	.left_sub_img {
+		height: 350px;
+		width: 350px;
+	}
+}

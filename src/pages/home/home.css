@@ -20,7 +20,7 @@
 	/* styles for devices with a minimum screen width of 480px */
 
 	.home {
-		overflow-x: hidden;
+		overflow-y: hidden;
 	}
 	.wrapper {
 		display: flex;

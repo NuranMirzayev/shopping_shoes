@@ -158,6 +158,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				sx={{
 					backgroundColor: 'rgb(218, 212, 212)',
 					color: 'black',
+					padding: '0',
 				}}
 				position='fixed'
 				className='navbar'
@@ -168,7 +169,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 						edge='start'
 						color='inherit'
 						aria-label='open drawer'
-						sx={{ mr: 2, display: { xs: 'flex', md: 'none' } }}
+						sx={{ padding: '0', mr: 2, display: { xs: 'flex', md: 'none' } }}
 					>
 						<MenuIcon />
 					</IconButton>
@@ -186,6 +187,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 									sm: 'flex',
 									md: 'flex',
 								},
+								padding: '0',
 								height: '60px',
 								maxWidth: '40svw',
 								justifyContent: 'center',
