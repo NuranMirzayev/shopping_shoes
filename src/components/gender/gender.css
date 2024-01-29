@@ -45,7 +45,7 @@
 
 .main_center {
 	background-image: url(../../../public/assets/img_gender/kids.png);
-	background-position: center;
+	background-position: left;
 	background-size: cover;
 }
 
@@ -68,5 +68,21 @@
 
 	.main_left {
 		margin-bottom: 40px;
+	}
+}
+
+@media only screen and (min-width: 280px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		max-height: 600px;
+	}
+	.main_center,
+	.main_left,
+	.main_right {
+		background-color: #6409db;
+		background-image: none;
+		color: white;
 	}
 }
