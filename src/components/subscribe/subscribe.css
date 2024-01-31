@@ -66,6 +66,10 @@
 }
 
 @media only screen and (min-width: 280px) and (max-width: 768px) {
+	.subscribe {
+		height: 60svh;
+	}
+
 	.h1_right_sub {
 		font-size: 2rem;
 	}
@@ -86,7 +90,7 @@
 	}
 
 	.right_sub_btn {
-		margin-top: 20px;
+		margin-top: 10px;
 		border-radius: 6px;
 	}
 
