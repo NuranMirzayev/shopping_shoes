@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 53svh;
+	height: 55svh;
 }
 
 .left_sub {
@@ -32,14 +32,13 @@
 .h1_right_sub {
 	color: #fff;
 	margin-bottom: 50px;
-	font-size: 44px;
+	font-size: 2.5rem;
 }
 
 .right_sub_input {
 	min-height: 50px;
 	max-width: 200px;
 	padding: 0 1rem;
-	/* color: #CD3333; */
 	color: #fff;
 	font-size: 15px;
 	font-weight: 500;
@@ -84,5 +83,14 @@
 	.left_sub_img {
 		height: 350px;
 		width: 350px;
+	}
+
+	.right_sub_btn {
+		margin-top: 20px;
+		border-radius: 6px;
+	}
+
+	.right_sub_input {
+		border-radius: 6px;
 	}
 }

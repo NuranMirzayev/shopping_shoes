@@ -3,6 +3,7 @@
 	justify-content: center;
 	align-items: flex-start;
 	height: 60svh;
+	margin-top: 20px;
 }
 
 .carousel_img_btn_icon {
@@ -31,9 +32,9 @@
 	animation: carousel_img 4s ease-in infinite;
 }
 
-@media only screen and (min-width: 280px) and (max-width: 920px) {
+@media only screen and (min-width: 280px) and (max-width: 768px) {
 	.carousel {
-		height: 20svh;
-		margin-top: 20px;
+		height: 35svh;
+		margin-top: 40px;
 	}
 }
