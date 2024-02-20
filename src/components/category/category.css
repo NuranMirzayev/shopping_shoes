@@ -3,6 +3,11 @@
 	width: 100%;
 }
 
+.category .category_box {
+	display: flex;
+	align-items: center;
+}
+
 .category_h1 {
 	padding: 0 8%;
 	margin-top: 40px;
@@ -32,6 +37,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	margin-left: 5%;
 	flex-wrap: nowrap;
 	height: 100%;
 	/* flex-basis: 550px; */
