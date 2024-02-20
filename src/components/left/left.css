@@ -5,21 +5,19 @@
 }
 
 .left__h1 {
-	font-size: 50px;
-	/* margin-top: 140px; */
+	font-size: clamp(35px, 4vw, 60px);
 }
 
 .left_text_p__2 {
-	/* margin-top: 40px; */
 	line-height: 1.5;
 	font-weight: 700;
-	font-size: 1.4rem;
+	font-size: clamp(1.3rem, 2vw, 1.4rem);
 }
 
 .left_text_p__3 {
 	margin-top: 40px;
 	line-height: 1.5;
-	font-size: 1.4rem;
+	font-size: clamp(1.1rem, 2vw, 1.5rem);
 }
 
 .left_btn {
