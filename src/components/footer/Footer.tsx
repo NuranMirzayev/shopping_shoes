@@ -106,10 +106,10 @@ const Footer = () => {
 				<div className='contact'>
 					<h2>Contact</h2>{' '}
 					{Contact.map(item => (
-						<>
-							<p>{item.p}</p>
-							<h5>{item.h5}</h5>
-						</>
+						<MenuList>
+							<Typography variant='body1'>{item.p}</Typography>
+							<Typography variant='body2'>{item.h5}</Typography>
+						</MenuList>
 					))}
 				</div>
 			</div>
