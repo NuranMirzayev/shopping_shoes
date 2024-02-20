@@ -1,10 +1,10 @@
 .category {
 	height: 68svh;
 	width: 100%;
-	padding: 0 8%;
 }
 
 .category_h1 {
+	padding: 0 8%;
 	margin-top: 40px;
 	width: 156px;
 	cursor: pointer;
