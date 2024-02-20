@@ -199,27 +199,41 @@ const MobileNavBar = ({ filterAll }: Props) => {
 					</Box>
 
 					<Stack spacing={1} direction='row' className='logo'>
-						<Typography
-							className='logoTypography'
-							variant='h6'
-							alignItems='center'
-							noWrap
-							component='div'
-							sx={{
-								display: {
-									xs: 'flex',
-									md: 'flex',
-								},
-								padding: '0',
-								height: '60px',
-								maxWidth: '50svw',
-								justifyContent: 'center',
-								alignItems: 'center',
+						<Link
+							style={{
+								color: 'black',
+								textDecoration: 'none',
+								listStyle: 'none',
 							}}
+							to='/home'
 						>
-							<img className='logoImg' src='./assets/Logo.png' alt='navLogo' />
-							<b>Space Shoes</b>
-						</Typography>
+							<Typography
+								className='logoTypography'
+								variant='h6'
+								alignItems='center'
+								noWrap
+								component='div'
+								sx={{
+									display: {
+										xs: 'flex',
+										md: 'flex',
+									},
+
+									padding: '0',
+									height: '60px',
+									maxWidth: '50svw',
+									justifyContent: 'center',
+									alignItems: 'center',
+								}}
+							>
+								<img
+									className='logoImg'
+									src='./assets/Logo.png'
+									alt='navLogo'
+								/>
+								<b>Space Shoes</b>
+							</Typography>
+						</Link>
 					</Stack>
 					<Stack
 						spacing={4}
