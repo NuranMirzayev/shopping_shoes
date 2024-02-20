@@ -183,7 +183,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 							sx={{
 								display: { xs: 'block', md: 'none' },
 								marginTop: 1,
-								marginLeft: -1,
+								marginLeft: -1.5,
 							}}
 						>
 							{navItems.map(item => (
