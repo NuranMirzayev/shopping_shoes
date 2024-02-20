@@ -218,7 +218,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 							}}
 						>
 							<img className='logoImg' src='./assets/Logo.png' alt='navLogo' />
-							<b>Space Shoes</b>
+							<b style={{ fontSize: 'clamp(10px,4vw,20px)' }}>Space Shoes</b>
 						</Typography>
 					</Stack>
 					<Stack
