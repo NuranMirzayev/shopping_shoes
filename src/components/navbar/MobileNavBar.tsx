@@ -207,7 +207,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 							component='div'
 							sx={{
 								display: {
-									sm: 'flex',
+									xs: 'flex',
 									md: 'flex',
 								},
 								padding: '0',
