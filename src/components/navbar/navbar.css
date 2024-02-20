@@ -221,3 +221,7 @@ b {
 .custom-bg {
 	background-color: rgb(218, 212, 212);
 }
+
+.bText {
+	font-size: clamp(0, 4vw, 20px);
+}
