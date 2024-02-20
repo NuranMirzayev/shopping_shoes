@@ -5,7 +5,7 @@
 
 	background-color: rgb(121, 2, 121);
 	color: white;
-	font-size: 20px;
+	font-size: clamp(12px, 2vw, 20px);
 }
 
 .footer_top {
@@ -32,7 +32,8 @@
 .contact {
 	display: flex;
 	flex-direction: column;
-	padding-left: 50px;
+	align-items: flex-start;
+	padding-left: (0, 2vw, 50px);
 }
 
 .footer_a {
@@ -40,7 +41,6 @@
 	text-decoration: none;
 	color: white;
 	font-weight: 500;
-	margin-top: 20px;
 }
 
 .footer_number {
