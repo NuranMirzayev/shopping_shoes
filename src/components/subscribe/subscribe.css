@@ -67,7 +67,7 @@
 
 @media only screen and (min-width: 280px) and (max-width: 768px) {
 	.subscribe {
-		height: 60svh;
+		max-height: 60svh;
 	}
 
 	.h1_right_sub {

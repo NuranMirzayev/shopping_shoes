@@ -1,7 +1,13 @@
 import MenuIcon from '@mui/icons-material/Menu'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import SearchIcon from '@mui/icons-material/Search'
-import { Stack, ThemeProvider, Tooltip, createTheme } from '@mui/material'
+import {
+	MenuItem,
+	Stack,
+	ThemeProvider,
+	Tooltip,
+	createTheme,
+} from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -10,6 +16,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { red } from '@mui/material/colors'
 import { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { useAuth } from '../../app/useAuth'
 import { getAllTotalFavorite } from '../../features/FavoritesCart/FavoriteSlice'
@@ -41,7 +48,7 @@ interface Props {
 }
 
 const MobileNavBar = ({ filterAll }: Props) => {
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+	const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
 		useState<null | HTMLElement>(null)
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
@@ -70,17 +77,20 @@ const MobileNavBar = ({ filterAll }: Props) => {
 		openModal(product)
 	}
 
+	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+		setAnchorElNav(event.currentTarget)
+	}
+
 	const handleMobileMenuClose = () => {
 		setMobileMoreAnchorEl(null)
 	}
 
-	const handleMenuClose = () => {
-		setAnchorEl(null)
-		handleMobileMenuClose()
-	}
-
 	const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
 		setMobileMoreAnchorEl(event.currentTarget)
+	}
+
+	const handleCloseNavMenu = () => {
+		setAnchorElNav(null)
 	}
 
 	useEffect(() => {
@@ -90,25 +100,6 @@ const MobileNavBar = ({ filterAll }: Props) => {
 	useEffect(() => {
 		dispatch(getAllTotalFavorite())
 	}, [favorite, dispatch])
-
-	const menuId = 'primary-search-account-menu'
-	const renderMenu = (
-		<Menu
-			anchorEl={anchorEl}
-			anchorOrigin={{
-				vertical: 'bottom',
-				horizontal: 'right',
-			}}
-			id={menuId}
-			keepMounted
-			transformOrigin={{
-				vertical: 'top',
-				horizontal: 'right',
-			}}
-			open={Boolean(anchorEl)}
-			onClose={handleMenuClose}
-		></Menu>
-	)
 
 	const mobileMenuId = 'primary-search-account-menu-mobile'
 	const renderMobileMenu = (
@@ -164,15 +155,47 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				className='navbar'
 			>
 				<Toolbar>
-					<IconButton
-						size='large'
-						edge='start'
-						color='inherit'
-						aria-label='open drawer'
-						sx={{ padding: '0', mr: 2, display: { xs: 'flex', md: 'none' } }}
-					>
-						<MenuIcon />
-					</IconButton>
+					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+						<IconButton
+							size='large'
+							aria-label='account of current user'
+							aria-controls='menu-appbar'
+							aria-haspopup='true'
+							onClick={handleOpenNavMenu}
+							color='inherit'
+						>
+							<MenuIcon />
+						</IconButton>
+						<Menu
+							id='menu-appbar'
+							anchorEl={anchorElNav}
+							anchorOrigin={{
+								vertical: 'bottom',
+								horizontal: 'right',
+							}}
+							keepMounted
+							transformOrigin={{
+								vertical: 'top',
+								horizontal: 'right',
+							}}
+							open={Boolean(anchorElNav)}
+							onClose={handleCloseNavMenu}
+							sx={{
+								display: { xs: 'block', md: 'none' },
+								marginTop: 1,
+							}}
+						>
+							{navItems.map(item => (
+								<Stack sx={{ display: 'flex', alignItems: 'center' }}>
+									<Link className='navList' to={item.route}>
+										<MenuItem key={item.route} onClick={handleCloseNavMenu}>
+											<Typography textAlign='center'>{item.title}</Typography>
+										</MenuItem>
+									</Link>
+								</Stack>
+							))}
+						</Menu>
+					</Box>
 
 					<Stack spacing={1} direction='row' className='logo'>
 						<Typography
@@ -284,7 +307,6 @@ const MobileNavBar = ({ filterAll }: Props) => {
 				</Toolbar>
 			</AppBar>
 			{renderMobileMenu}
-			{renderMenu}
 		</Box>
 	)
 }
