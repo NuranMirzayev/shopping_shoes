@@ -212,7 +212,7 @@ const MobileNavBar = ({ filterAll }: Props) => {
 								},
 								padding: '0',
 								height: '60px',
-								maxWidth: '40svw',
+								maxWidth: '50svw',
 								justifyContent: 'center',
 								alignItems: 'center',
 							}}
