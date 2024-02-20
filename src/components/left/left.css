@@ -15,7 +15,8 @@
 }
 
 .left_text_p__3 {
-	margin-top: 40px;
+	margin-top: clamp(20px, 2vw, 40px);
+	/* margin-top: 40px; */
 	line-height: 1.5;
 	font-size: clamp(1.1rem, 2vw, 1.5rem);
 }
