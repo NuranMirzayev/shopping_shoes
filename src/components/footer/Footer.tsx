@@ -70,7 +70,7 @@ const Footer = () => {
 			<div className='footer_top'>
 				<Stack
 					sx={{
-						display: { xs: 'none', sm: 'none' },
+						display: { xs: 'none', md: 'flex' },
 						height: '150px',
 						width: '350px',
 					}}

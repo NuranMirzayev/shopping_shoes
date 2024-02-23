@@ -1,26 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
-
-* {
-	margin: 0;
-	padding: 0;
+.home {
+	overflow-x: hidden;
 	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 80px;
-	min-height: 100svh;
-	/* max-width: 2000px; */
+	height: calc(100svh + 80px);
 }
 
 @media only screen and (min-width: 280px) and (max-width: 1024px) {
 	/* styles for devices with a minimum screen width of 480px */
 
 	.home {
-		overflow-y: hidden;
+		overflow: hidden;
 	}
 	.wrapper {
 		display: flex;

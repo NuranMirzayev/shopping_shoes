@@ -24,9 +24,9 @@
 }
 
 .h2_pr {
+	margin-top: 2em;
 	margin-left: 8%;
-	height: 300px;
-	margin-bottom: 40px;
+	height: 80px;
 	font-size: 2em;
 	width: 210px;
 	cursor: pointer;

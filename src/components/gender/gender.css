@@ -1,11 +1,12 @@
 .gender {
-	min-height: 65svh;
+	height: 100%;
 	padding: 0 8%;
 }
 
 .main {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	align-self: center;
 	gap: 60px;
 	max-width: 100%;

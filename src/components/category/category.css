@@ -1,17 +1,18 @@
 .category {
-	height: 68svh;
+	height: 60svh;
 	width: 100%;
 }
 
 .category .category_box {
 	display: flex;
 	align-items: center;
+	align-self: center;
 }
 
 .category_h1 {
-	padding: 0 8%;
+	margin-left: 8%;
 	margin-top: 40px;
-	width: 156px;
+	width: 168px;
 	cursor: pointer;
 	background-image: linear-gradient(
 		to bottom,
@@ -35,12 +36,11 @@
 
 .category_box {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
-	/* margin-left: 5%; */
 	flex-wrap: nowrap;
+	gap: 40px;
 	height: 100%;
-	/* flex-basis: 550px; */
 }
 
 .box_lifeStyle,
@@ -51,9 +51,6 @@
 .box_sale {
 	height: 220px;
 	width: 220px;
-	border-radius: 50%;
-	margin: 0;
-	/* margin-right: 15px; */
 }
 
 .category_img {
@@ -62,8 +59,6 @@
 	border-radius: 50%;
 	transform: rotate(-30deg);
 	margin-top: 100px;
-
-	/* border: 2px solid ; */
 
 	background-position: center;
 	background-size: cover;
@@ -76,8 +71,6 @@
 	height: 220px;
 	width: 220px;
 	border-radius: 50%;
-	/* margin-top: 110px; */
-
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -123,6 +116,7 @@
 		overflow-y: hidden;
 		display: flex;
 		justify-content: flex-start;
+		/* width: 100%; */
 	}
 	.category_img {
 		margin-top: 0;
@@ -134,5 +128,11 @@
 
 	.category_box::-webkit-scrollbar-thumb {
 		background: transparent;
+	}
+}
+
+@media only screen and (max-width: 440px) {
+	.category_box {
+		width: 100%;
 	}
 }

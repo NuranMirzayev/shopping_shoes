@@ -47,70 +47,9 @@
 	cursor: pointer;
 }
 
-.bg_animation1 {
-	height: 400px;
-	width: 400px;
-	border: 5px solid #e1caff;
-	animation: an_inf 6.5s infinite linear;
-	position: absolute;
-	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-	filter: drop-shadow(0 0 20px);
-}
-.bg_animation2 {
-	height: 400px;
-	width: 400px;
-	border: 6px solid #9979c4;
-	animation: an_inf2 4.5s infinite linear;
-	position: absolute;
-	border-radius: 71% 49% 66% 84% / 62% 55% 45% 58%;
-	filter: drop-shadow(0 0 20px);
-}
-.bg_animation3 {
-	border: 9px solid #43236d;
-	height: 400px;
-	width: 400px;
-	animation: an_inf 9s infinite linear;
-	position: absolute;
-	border-radius: 26% 74% 55% 45% / 62% 75% 25% 38%;
-	filter: drop-shadow(0 0 20px);
-}
-
-.bg_animation4 {
-	border: 2px solid #5d0bc9;
-	height: 400px;
-	width: 400px;
-	animation: an_inf2 7s infinite linear;
-	position: absolute;
-	border-radius: 38% 62% 29% 71% / 62% 22% 78% 38%;
-	filter: drop-shadow(0 0 20px);
-}
-
-@keyframes an_inf {
-	to {
-		transform: rotate(0deg);
-	}
-	from {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes an_inf2 {
-	to {
-		transform: rotate(0deg);
-	}
-
-	from {
-		transform: rotate(360deg);
-	}
-}
-
 @media only screen and (min-width: 280px) and (max-width: 1024px) {
 	.right {
 		height: 500px;
-	}
-
-	i {
-		display: none;
 	}
 
 	.right_top_img {

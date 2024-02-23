@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 
 body {
-	background: rgb(218, 212, 212) 100%;
-	overflow-x: hidden;
+	background: rgb(218, 212, 212);
+	overflow-x: auto;
 }
 
 body::-webkit-scrollbar {
@@ -25,4 +27,10 @@ body::-webkit-scrollbar-track {
 
 /* body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duration='4000']{
     transition-duration: 4000ms;
+} */
+
+/* @media only screen and (max-width: 440px) {
+	body {
+		overflow-x: hidden;
+	}
 } */
