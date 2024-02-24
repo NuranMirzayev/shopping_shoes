@@ -46,7 +46,7 @@ const Woman = () => {
 
 	return (
 		<div className='woman'>
-			<h2 className='h2_man'>Woman</h2>
+			<h2 className='h2_woman'>Woman</h2>
 			<div className='divSelectedSort'>
 				<select
 					className='selectedSort'

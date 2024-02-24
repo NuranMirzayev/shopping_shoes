@@ -37,6 +37,7 @@ const NewArrivals = () => {
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
+					mt: 5,
 				}}
 				hidePrevButton
 				size='large'

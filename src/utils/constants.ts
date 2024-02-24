@@ -2,7 +2,7 @@ import { Img, ImgUrl, Item, SelectedFilterType, allProducts } from './types'
 
 export const base_url = 'https://63e7a708ac3920ad5be16a86.mockapi.io/api/v1'
 
-export const itemsPerPageDesktop = 6
+export const itemsPerPageDesktop = 8
 export const itemsPerPageMobile = 3
 
 export const navItems: Array<Item> = [
@@ -78,7 +78,6 @@ export const AllProducts: Array<allProducts> = [
 		threeImg: 'threeImg_1',
 		category: 'lifeStyle',
 		gender: "Men's",
-
 		size: '',
 		id: 1,
 	},
@@ -401,10 +400,10 @@ export const AllProducts: Array<allProducts> = [
 		firsImg: 'firsImg_24',
 		secondImg: 'secondImg_24',
 		threeImg: 'threeImg_24',
-		category: 'football',
+		category: 'football ',
 
 		size: '',
-		gender: "Kids'",
+		gender: "Kids' ",
 		id: 24,
 	},
 	{
@@ -416,10 +415,10 @@ export const AllProducts: Array<allProducts> = [
 		firsImg: 'firsImg_25',
 		secondImg: 'secondImg_25',
 		threeImg: 'threeImg_25',
-		category: 'running',
-		gender: "Kids'",
+		category: 'running || sales',
+		gender: "Kids' || 'Sales",
 		size: '',
-
+		sale: 339.9,
 		id: 25,
 	},
 	{

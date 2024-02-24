@@ -1,7 +1,7 @@
 .womanProducts {
 	padding: 0 8%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 5rem;
 	justify-items: center;
 	transition: none;
@@ -13,9 +13,10 @@
 
 .woman {
 	margin-top: 90px;
+	overflow-x: hidden;
 }
 
-.h2_man {
+.h2_woman {
 	width: 100svw;
 	text-align: center;
 	margin-top: 20px;

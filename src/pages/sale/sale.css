@@ -1,7 +1,7 @@
 .saleProducts {
 	padding: 0 8%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 5rem;
 	justify-items: center;
 	transition: none;
@@ -13,6 +13,7 @@
 
 .sale {
 	margin-top: 90px;
+	overflow-x: hidden;
 }
 
 .h2_man {
