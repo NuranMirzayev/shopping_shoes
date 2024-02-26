@@ -29,6 +29,7 @@ const MobileVersionAllProducts = ({ mobProducts }: MobileProductsProps) => {
 			<CardContent>
 				<Typography
 					gutterBottom
+					className='mobNameText'
 					sx={{ fontSize: '16px' }}
 					variant='h6'
 					component='div'

@@ -1,5 +1,5 @@
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
-import { Button, Tooltip, useMediaQuery } from '@mui/material'
+import { Button, Tooltip, Typography, useMediaQuery } from '@mui/material'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -28,7 +28,9 @@ const AllProduct = ({ products }: AllProductProps) => {
 						alt={products.name}
 					/>
 					<div className='product_infoes_icons'>
-						<p className='name_p'>{products.name}</p>
+						<Typography variant='h5' fontWeight={600} className='name_p'>
+							{products.name}
+						</Typography>
 						{products.sale ? (
 							<p className='price_p'>
 								{`₪${products!.price.toFixed(2)}`}{' '}
