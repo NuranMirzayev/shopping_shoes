@@ -27,7 +27,7 @@ const NewArrivals = () => {
 	return (
 		<div className='newArrivals'>
 			<h2 className='h2_pr'>New Arrivals</h2>
-			<div data-aos='zoom-in-up' className='newArrivalsProducts'>
+			<div className='newArrivalsProducts'>
 				{newArrivalsToDisplay.map(item => (
 					<AllProduct key={item.name} products={item} />
 				))}
