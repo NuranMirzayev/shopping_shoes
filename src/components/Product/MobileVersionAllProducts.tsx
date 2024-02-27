@@ -14,13 +14,22 @@ import {
 
 interface MobileProductsProps {
 	mobProducts: Product
+	index: number
 }
 
-const MobileVersionAllProducts = ({ mobProducts }: MobileProductsProps) => {
+const MobileVersionAllProducts = ({
+	mobProducts,
+	index,
+}: MobileProductsProps) => {
 	const { openModal } = useContext(ModalWindowsContext)
+	const delay = index * 200
 
 	return (
-		<Card sx={{ maxWidth: 300, height: 265, m: 0 }}>
+		<Card
+			data-aos='zoom-in-up'
+			data-aos-delay={delay}
+			sx={{ maxWidth: 300, height: 265, m: 0 }}
+		>
 			<CardMedia
 				sx={{ height: 125 }}
 				image={`./assets/AllProductsImg/${mobProducts.mainImg}.png`}

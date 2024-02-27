@@ -70,7 +70,7 @@ const AllProduct = ({ products, index }: AllProductProps) => {
 					</div>
 				</div>
 			) : (
-				<MobileVersionAllProducts mobProducts={products} />
+				<MobileVersionAllProducts index={index} mobProducts={products} />
 			)}
 			{isOpen && (
 				<div className='modal'>
