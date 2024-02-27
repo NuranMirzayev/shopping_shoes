@@ -51,7 +51,6 @@
 @media only screen and (min-width: 280px) {
 	.newArrivals {
 		max-height: 200svh;
-		/* overflow-y: hidden; */
 	}
 
 	.h2_pr {
@@ -61,6 +60,11 @@
 
 @media only screen and (max-width: 480px) {
 	.newArrivalsProducts {
+		padding: 0;
 		justify-items: center;
+		grid-template-columns: 1fr 1fr;
+		margin: 0;
+		grid-gap: 1rem;
+		height: 100svh;
 	}
 }
