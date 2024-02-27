@@ -17,7 +17,7 @@ export type Product = {
 	category?: string
 	gender?: string
 	sale?: number
-	id: number | string
+	id: number | string | any
 	newArrivals?: string
 	sizeMain?: []
 	cartQuantity?: number | any

@@ -12,27 +12,19 @@ import './Product.css'
 
 interface AllProductProps {
 	products: Product
+	index: number
 }
 
-const AllProduct = ({ products }: AllProductProps) => {
+const AllProduct = ({ products, index }: AllProductProps) => {
 	const { isOpen, openModal } = useContext(ModalWindowsContext)
 	const isMobileMedia = useMediaQuery('(max-width:940px)')
 
-	const animationDuration = 100
-	const numberOfIncrements = (animationDuration - 100) / 100 // Calculate the number of increments (each increment is 0.5 seconds)
-	const incrementDuration = 100 // Duration to be incremented for each increment in milliseconds
-
-	const calculatedDuration =
-		animationDuration + numberOfIncrements * incrementDuration // Calculate the final duration
+	const delay = index * 200
 
 	return (
-		<div className='Product'>
+		<div className='Product' data-aos='zoom-in-up' data-aos-delay={delay}>
 			{!isMobileMedia ? (
-				<div
-					data-aos='zoom-in-up'
-					data-aos-delay={calculatedDuration}
-					className='top_product'
-				>
+				<div className='top_product'>
 					<img
 						className='product_img'
 						src={`./assets/AllProductsImg/${products.mainImg}.png`}

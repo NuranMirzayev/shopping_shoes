@@ -69,8 +69,8 @@ const Kids = () => {
 			</div>
 
 			<div data-aos='zoom-in-up' className='kidProducts'>
-				{sortedAndFilteredProducts.map((item: allProducts) => (
-					<AllProduct key={item.name} products={item} />
+				{sortedAndFilteredProducts.map((item: allProducts, index) => (
+					<AllProduct index={index} key={item.name} products={item} />
 				))}
 			</div>
 			<Pagination

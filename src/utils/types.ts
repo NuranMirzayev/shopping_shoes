@@ -29,7 +29,7 @@ export interface allProducts {
 	category?: string
 	gender?: string
 	sale?: number
-	id: number | string
+	id: number
 	newArrivals?: string
 	sizeMain?: []
 	cartQuantity?: number | any

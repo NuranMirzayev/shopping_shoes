@@ -28,8 +28,8 @@ const NewArrivals = () => {
 		<div className='newArrivals'>
 			<h2 className='h2_pr'>New Arrivals</h2>
 			<div className='newArrivalsProducts'>
-				{newArrivalsToDisplay.map(item => (
-					<AllProduct key={item.name} products={item} />
+				{newArrivalsToDisplay.map((item, index) => (
+					<AllProduct key={item.name} products={item} index={index} />
 				))}
 			</div>
 			<Pagination

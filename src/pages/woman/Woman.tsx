@@ -67,8 +67,8 @@ const Woman = () => {
 			</div>
 
 			<div data-aos='zoom-in-up' className='womanProducts'>
-				{filterAllProducts.map((item: allProducts) => (
-					<AllProduct key={item.name} products={item} />
+				{filterAllProducts.map((item: allProducts, index) => (
+					<AllProduct index={index} key={item.name} products={item} />
 				))}
 			</div>
 			<Pagination
